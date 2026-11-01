@@ -1,0 +1,26 @@
+VELORA - COMPLETE UPDATED PROJECT (v4.0 - Signature Films and Preview Fix)
+
+1. Stop the old dev server (Ctrl+C in its terminal).
+2. Extract this entire ZIP into a NEW folder. Do not merge it into the old project.
+3. Install Node.js 22 LTS or newer if needed.
+4. Open a terminal inside the extracted velora-complete folder:
+
+   npm ci
+   npm run dev
+
+5. Open http://localhost:3000.
+
+On Windows you can instead double-click START-WINDOWS.cmd inside the velora-complete folder.
+It installs the exact dependencies and starts the development server.
+
+The ZIP includes package.json AND package-lock.json. Keep both.
+The fonts are bundled in public/fonts and need no Fontsource npm packages.
+This edition has 27 curated designs: 6 Signature and 21 Editions. 63 repeated variants have been removed from the gallery and editor; old invitation URLs remain available.
+Tradition and occasion filters are in The Collection. Song controls are under Your Story in the Studio.
+
+To build: npm run build
+To serve the included production build without installing packages: node scripts/serve.mjs
+
+RSVP remains a local demonstration. See README.md for launch integration details.
+
+Try Royal Blue Seal and Kandyan Garden in the gallery. These are new full-page experiences replacing the older generic renditions.

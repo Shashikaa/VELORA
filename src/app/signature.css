@@ -1,0 +1,4249 @@
+/* Signature invitations: ten compositions with shared functional controls. */
+.signature-shell {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  overflow: clip;
+  container-type: inline-size;
+}
+.signature-shell h1,
+.signature-shell h2,
+.signature-shell h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+.signature-shell button,
+.signature-shell a {
+  -webkit-tap-highlight-color: transparent;
+}
+.sig-kicker {
+  display: block;
+  font-family: var(--sans);
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 0.19em;
+  line-height: 1.9;
+  color: var(--gold);
+}
+.signature-shell h2 {
+  font-size: clamp(34px, 10cqw, 63px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+.signature-shell h2 em {
+  color: inherit;
+  font-weight: 400;
+}
+.signature-shell p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+.sig-panel {
+  padding: 65px 30px;
+  text-align: center;
+  position: relative;
+}
+.sig-panel > p {
+  max-width: 480px;
+  margin: 22px auto;
+}
+.sig-panel > h2 {
+  margin: 17px auto 28px;
+  max-width: 580px;
+}
+.sig-panel > svg {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 20px;
+  color: var(--gold);
+}
+.sig-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 13px 19px;
+  font-family: var(--sans);
+  font-size: 8px;
+  border: 1px solid var(--ink);
+  transition:
+    transform 0.3s,
+    filter 0.3s;
+  cursor: pointer;
+  line-height: 1.6;
+}
+.sig-action:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+.sig-fine-print {
+  display: block !important;
+  font-family: var(--sans);
+  font-size: 6px !important;
+  line-height: 1.9 !important;
+  opacity: 0.65;
+  margin-top: 16px !important;
+}
+.signature-shell .invite-utilities {
+  top: 17px;
+  right: 13px;
+  position: absolute;
+  z-index: 15;
+}
+.signature-shell .music-button {
+  color: var(--ink);
+  background: var(--paper);
+}
+.signature-shell .signature-document {
+  animation: signature-page-arrive 1.1s ease-out both;
+}
+.sig-names {
+  font-size: clamp(45px, 15cqw, 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+.sig-names i {
+  font-size: 0.52em;
+  color: var(--gold);
+  line-height: 1.2;
+}
+.sig-names.inline {
+  font-size: clamp(32px, 10cqw, 70px);
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.22em;
+  line-height: 1.2;
+}
+.sig-date-line {
+  font-family: var(--sans);
+  font-size: 8px !important;
+  line-height: 1.9 !important;
+  letter-spacing: 0.09em;
+}
+.sig-date-line span {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.025em;
+  margin-top: 9px;
+}
+.sig-hero {
+  min-height: 640px;
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+  overflow: hidden;
+  padding: 75px 28px 45px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.sig-cover {
+  min-height: 620px;
+  height: 100%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 75px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  transition: opacity 0.7s 1.1s;
+}
+.full-invitation .sig-cover {
+  height: 100svh;
+  min-height: 760px;
+  padding-bottom: max(80px, env(safe-area-inset-bottom));
+}
+.sig-cover-type {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition:
+    transform 1.2s,
+    opacity 0.7s;
+}
+.sig-cover-type h1 {
+  font-size: clamp(43px, 16cqw, 94px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.06;
+  gap: 5px;
+  letter-spacing: -0.04em;
+  margin: 29px 0 23px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.sig-cover-type h1 i {
+  font-size: 0.5em;
+  color: var(--gold);
+  line-height: 1.3;
+}
+.sig-cover-type > p {
+  font-family: var(--sans);
+  font-size: 8px;
+  letter-spacing: 0.11em;
+}
+.sig-cover-type > small {
+  font-family: var(--sans);
+  font-size: 6px;
+  line-height: 1.8;
+  color: var(--gold);
+  margin-top: 17px;
+  letter-spacing: 0.05em;
+}
+.sig-open-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  font-family: var(--sans);
+  font-size: 8px;
+  margin-top: 30px;
+  padding: 13px 18px;
+  border: 1px solid var(--gold);
+  position: relative;
+  color: var(--ink);
+  background: var(--paper);
+  transition:
+    transform 0.4s,
+    filter 0.4s;
+  cursor: pointer;
+}
+.sig-open-button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.04);
+}
+.sig-open-button > svg {
+  width: 25px;
+  height: 25px;
+  color: var(--gold);
+}
+.signature-cover-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: absolute;
+  bottom: 23px;
+  left: 25px;
+  right: 25px;
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  z-index: 5;
+}
+.signature-cover-footer span:first-child {
+  max-width: 62%;
+  line-height: 1.8;
+}
+.sig-cover.opening .sig-cover-type {
+  opacity: 0;
+  transform: translateY(-25px) scale(1.05);
+  pointer-events: none;
+}
+.sig-cover.opening .signature-cover-footer {
+  opacity: 0;
+}
+.sig-cover.opening {
+  opacity: 0;
+}
+.sig-cover-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.gold-leaf-frame {
+  position: absolute;
+  inset: 25px;
+  border: 1px solid var(--gold);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.gold-leaf-frame:after {
+  position: absolute;
+  content: "";
+  inset: 5px;
+  border: 1px solid var(--gold);
+  opacity: 0.4;
+}
+.sig-cover-lotus {
+  background: #faf4e3;
+  color: #937234;
+}
+.sig-cover-lotus .lotus-orbit {
+  position: absolute;
+  width: 180%;
+  max-width: none;
+  left: 18%;
+  top: 7%;
+  opacity: 0.23;
+  color: #a88945;
+  animation: slow-turn 160s linear infinite;
+}
+.lotus-emblem {
+  position: absolute;
+  width: 75px;
+  top: 15%;
+  left: calc(50% - 37px);
+  color: #a88945;
+}
+.sig-cover-lotus .sig-cover-type {
+  padding-top: 48px;
+}
+.sig-cover-lotus .sig-cover-type h1 {
+  font-size: clamp(40px, 14cqw, 86px);
+}
+.sig-cover-lotus .sig-open-button {
+  background: #ac8a46;
+  color: #fff8e5;
+  border-color: #ac8a46;
+}
+.sig-cover-lotus .sig-open-button > svg {
+  color: #fff1ca;
+}
+.sig-cover-lotus.opening .lotus-orbit {
+  animation: lotus-unfold 1.5s ease-in forwards;
+}
+.sig-cover-lotus.opening .lotus-emblem {
+  transform: scale(5);
+  opacity: 0;
+  transition: all 1.4s;
+}
+.palace-illustration {
+  color: var(--gold);
+}
+.sig-cover-palace {
+  background: #102e26;
+  color: #f3e5c2;
+}
+.sig-cover-palace > .palace-illustration {
+  width: 130%;
+  position: absolute;
+  bottom: 8%;
+  left: -15%;
+  opacity: 0.18;
+}
+.gate-leaf {
+  position: absolute;
+  inset: 12px 50% 12px 12px;
+  border: 1px solid var(--gold);
+  border-radius: 130px 0 0 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 25px,
+    #cbb27320 26px,
+    #cbb27320 27px
+  );
+  color: var(--gold);
+  transform-origin: 0 50%;
+  transition: transform 1.7s;
+}
+.gate-leaf.right {
+  inset: 12px 12px 12px 50%;
+  border-radius: 0 130px 0 0;
+  transform-origin: 100% 50%;
+}
+.gate-leaf > svg {
+  position: absolute;
+  width: 140%;
+  max-width: none;
+  left: -20%;
+  top: 20%;
+  opacity: 0.18;
+}
+.sig-cover-palace .sig-cover-type {
+  padding-top: 30px;
+}
+.sig-cover-palace.opening .gate-leaf.left {
+  transform: perspective(700px) rotateY(-115deg);
+}
+.sig-cover-palace.opening .gate-leaf.right {
+  transform: perspective(700px) rotateY(115deg);
+}
+.sig-cover-palace .sig-open-button {
+  background: #b89c59;
+  color: #173a2f;
+}
+.sig-cover-procession {
+  background: #361d2e;
+  color: #f9e6ba;
+}
+.sig-cover-procession .sig-cover-type {
+  padding-bottom: 30px;
+}
+.lantern-line {
+  position: absolute;
+  inset: 15px 0 auto;
+  display: flex;
+  justify-content: space-around;
+  height: 150px;
+}
+.lantern-line i {
+  display: block;
+  width: 10px;
+  height: 21px;
+  border-radius: 50% 50% 30% 30%;
+  background: #d9ae61;
+  box-shadow: 0 0 25px #ebbd7050;
+  margin-top: calc(var(--i) * 7px);
+  animation: lantern-flicker 3s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.3s);
+}
+.lantern-line i:before {
+  content: "";
+  width: 1px;
+  height: 55px;
+  background: #c9a45a70;
+  position: absolute;
+  transform: translate(5px, -55px);
+}
+.procession-row {
+  position: absolute;
+  display: flex;
+  gap: 15px;
+  bottom: 6%;
+  left: -10%;
+  width: 120%;
+  color: #c9a45a;
+  opacity: 0.6;
+}
+.procession-row svg {
+  width: 33%;
+}
+.sig-cover-procession .sig-open-button {
+  background: transparent;
+  color: #f2d599;
+  border-color: #ac854c;
+  box-shadow: 0 0 25px #edc67510;
+}
+.sig-cover-procession.opening .lantern-line {
+  filter: brightness(2.2);
+  transition: filter 1.2s;
+}
+.sig-cover-procession.opening .procession-row {
+  transform: translateX(100%);
+  transition: transform 1.6s ease-in;
+}
+.sig-cover-peacock {
+  background: #0c514a;
+  color: #efdfae;
+}
+.cover-peacock {
+  position: absolute;
+  width: 150%;
+  max-width: none;
+  left: -25%;
+  bottom: -7%;
+  color: #c4b67a;
+  opacity: 0.45;
+  transform-origin: 50% 90%;
+  animation: fan-sway 10s ease-in-out infinite;
+}
+.sig-cover-peacock .sig-cover-type {
+  padding-bottom: 70px;
+}
+.peacock-eye {
+  position: absolute;
+  bottom: 7%;
+  left: calc(50% - 25px);
+  color: #b3b475;
+  font-size: 55px;
+}
+.sig-cover-peacock .sig-open-button {
+  background: #0c514adb;
+  color: #efdfae;
+  border-color: #c3ae72;
+}
+.sig-cover-peacock.opening .cover-peacock {
+  animation: peacock-open 1.7s ease-out forwards;
+}
+.sig-cover-flight {
+  background: #112032;
+  color: #f7edcf;
+}
+.sig-cover-flight:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#06152599, transparent 50%, #08152abf);
+  z-index: -1;
+}
+.cabin-window {
+  position: absolute;
+  inset: 28px 24px 33px;
+  border: 7px solid #d5cfc470;
+  border-radius: 130px 130px 100px 100px;
+  box-shadow:
+    0 0 0 24px #101a2b55,
+    inset 0 0 22px #03112560;
+  z-index: 0;
+  transition:
+    transform 2s,
+    opacity 1s;
+}
+.cabin-window > span {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.15em;
+  line-height: 1.9;
+  color: #f0deb7;
+}
+.sig-cover-flight .sig-cover-type {
+  padding-bottom: 50px;
+}
+.sig-cover-flight .sig-cover-type h1 {
+  font-size: clamp(40px, 13cqw, 80px);
+}
+.sig-cover-flight .sig-open-button {
+  background: #e4cfa5;
+  border-color: #e4cfa5;
+  color: #17283d;
+}
+.sig-cover-flight .sig-open-button svg {
+  color: #17283d;
+}
+.cover-boarding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+  font-family: var(--sans);
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}
+.cover-boarding svg {
+  width: 50px;
+  color: #d5bc8c;
+}
+.cover-plane {
+  width: 90px;
+  position: absolute;
+  top: 12%;
+  left: 8%;
+  transform: rotate(-16deg);
+  color: #dec89f;
+  opacity: 0.8;
+  transition:
+    transform 2s ease-in,
+    opacity 1.8s;
+}
+.sig-cover-flight.opening .cabin-window {
+  transform: scale(4);
+  opacity: 0;
+}
+.sig-cover-flight.opening .cover-plane {
+  transform: translate(500px, -150px) scale(1.4);
+  opacity: 0;
+}
+.sig-cover-flight.opening .sig-cover-photo {
+  transform: scale(1.2);
+  transition: transform 2s;
+}
+.sig-cover-manuscript {
+  background: #e6d4ad;
+  color: #5b402a;
+  box-shadow: inset 0 0 100px #8f64272e;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 29px,
+    #8267390c 30px
+  );
+}
+.manuscript-roller {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 25px;
+  border-radius: 50%;
+  background: linear-gradient(#7c5c32, #e3c891 43%, #a48047 60%, #d7b77c);
+  box-shadow: 0 4px 13px #59391733;
+  z-index: 2;
+}
+.manuscript-roller.top {
+  top: 20px;
+}
+.manuscript-roller.bottom {
+  bottom: 20px;
+}
+.script-lines {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  top: 14%;
+  font-style: italic;
+  font-size: 42px;
+  line-height: 1.4;
+  opacity: 0.13;
+  transform: rotate(-12deg);
+}
+.sig-cover-manuscript .sig-kicker {
+  color: #785b31;
+}
+.sig-cover-manuscript .sig-open-button {
+  background: #714b32;
+  color: #f8ebcf;
+  border-color: #714b32;
+}
+.sig-cover-manuscript.opening .manuscript-roller.top {
+  transform: translateY(-50px);
+  transition: transform 1.5s;
+}
+.sig-cover-manuscript.opening .manuscript-roller.bottom {
+  transform: translateY(70px);
+  transition: transform 1.5s;
+}
+.sig-cover-botanical {
+  background: #e4e9e8;
+  color: #3b5362;
+}
+.botanical-wreath {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid #8c9fa1;
+  border-radius: 48% 48% 42% 42%;
+  color: #899b8c;
+}
+.botanical-wreath svg {
+  position: absolute;
+  width: 66%;
+  bottom: 7%;
+  left: -23%;
+  transform: rotate(-12deg);
+  opacity: 0.8;
+}
+.botanical-wreath svg:last-child {
+  left: auto;
+  right: -23%;
+  transform: scaleX(-1) rotate(-12deg);
+}
+.vellum-sheet {
+  position: absolute;
+  inset: 0 50% 0 0;
+  backdrop-filter: blur(1px);
+  background: #ffffff1a;
+  border-right: 1px solid #879ca330;
+  z-index: 1;
+  transition: transform 1.5s;
+}
+.vellum-sheet.right {
+  inset: 0 0 0 50%;
+  border-left: 1px solid #879ca330;
+  border-right: 0;
+}
+.sig-cover-botanical .sig-cover-type {
+  padding: 10px;
+}
+.sig-cover-botanical .sig-open-button {
+  background: #f1f4efcf;
+  border-color: #8b9c98;
+  color: #3f5860;
+}
+.sig-cover-botanical.opening .vellum-sheet.left {
+  transform: translateX(-100%);
+}
+.sig-cover-botanical.opening .vellum-sheet.right {
+  transform: translateX(100%);
+}
+.sig-lace-texture {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  opacity: 0.85;
+  z-index: -1;
+}
+.sig-cover-lace {
+  background: #fbf8ef;
+  color: #807059;
+}
+.lace-flap {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 51%;
+  background: linear-gradient(130deg, #faf6e9cc, #eae1d7df);
+  clip-path: polygon(0 0, 100% 0, 100% 16%, 50% 100%, 0 16%);
+  filter: drop-shadow(0 5px 3px #74655135);
+  transform-origin: 50% 0;
+  transition: transform 1.5s;
+}
+.sig-cover-lace .sig-cover-type {
+  justify-content: space-between;
+  height: 100%;
+  padding: 18px 0 10px;
+}
+.sig-cover-lace .sig-cover-type h1 {
+  font-size: clamp(32px, 11cqw, 70px);
+  font-style: italic;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.18em;
+  margin: 15px 0 10px;
+  flex-wrap: wrap;
+}
+.sig-cover-lace .sig-cover-type > p {
+  margin-bottom: auto;
+}
+.sig-open-button.pearl-seal {
+  position: absolute;
+  top: 43%;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 5px double #c1b49f;
+  background: radial-gradient(circle at 30% 25%, #ffffff, #e9e0d1 50%, #c7b8a0);
+  color: #8c7650;
+  box-shadow:
+    0 5px 12px #6d56442d,
+    inset 2px 3px 8px #fff;
+  transition:
+    transform 1.2s,
+    background 1.2s;
+  margin: 0;
+  padding: 0;
+}
+.pearl-monogram {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 23px;
+  font-family: var(--serif);
+  font-style: italic;
+}
+.pearl-monogram i {
+  font-size: 13px;
+}
+.sig-cover-lace .sig-cover-type > small {
+  margin-top: auto;
+  padding-bottom: 25px;
+  color: #8c7650;
+}
+.pearl-thread {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.pearl-thread i {
+  width: 5px;
+  height: 5px;
+  background: radial-gradient(circle at 30% 30%, #fff, #d0c4ad);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(4% + var(--i) * 3.2%);
+  top: calc(44% + sin(var(--i) * 0.35) * 7%);
+  opacity: 0.9;
+}
+.sig-cover-lace.opening .lace-flap {
+  transform: perspective(750px) rotateX(165deg);
+}
+.sig-cover-lace.opening .pearl-seal {
+  transform: rotateY(360deg) scale(1.2);
+  background: radial-gradient(circle at 30% 25%, #f7df9a, #bb9349 60%, #8f672c);
+}
+.sig-cover-roadtrip {
+  background: #f0d5cc;
+  color: #864958;
+}
+.embossed-florals {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #bd8f7b80;
+  margin: 12px;
+  color: #c09481;
+  box-shadow: inset 0 0 0 4px #f6e5d85c;
+}
+.embossed-florals svg {
+  position: absolute;
+  width: 65%;
+  left: -25%;
+  top: 0;
+  opacity: 0.45;
+}
+.embossed-florals svg:last-child {
+  left: auto;
+  right: -25%;
+  top: auto;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+.ribbon-band {
+  position: absolute;
+  height: 20px;
+  left: 0;
+  right: 0;
+  top: 38%;
+  background: linear-gradient(#a45f6e, #e4aeb3 43%, #b77c87);
+  box-shadow: 0 3px 5px #83536325;
+  transition: transform 1.5s;
+}
+.satin-bow {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 24%;
+  overflow: visible;
+  z-index: 2;
+}
+.bow-loop {
+  transform-box: fill-box;
+  transform-origin: 100% 50%;
+  transition:
+    transform 1.7s,
+    opacity 0.9s;
+}
+.bow-loop.right {
+  transform-origin: 0 50%;
+}
+.bow-tail {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  transition:
+    transform 1.5s,
+    opacity 0.7s;
+}
+.sig-cover-roadtrip .sig-cover-type {
+  justify-content: flex-end;
+  height: 100%;
+  padding-top: 70%;
+  padding-bottom: 5px;
+}
+.sig-cover-roadtrip .sig-cover-type > .sig-kicker {
+  font-size: 5px;
+}
+.sig-cover-roadtrip .sig-cover-type h1 {
+  font-size: clamp(32px, 11cqw, 70px);
+  font-style: italic;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.16em;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+.sig-cover-roadtrip .sig-open-button {
+  background: #ad6c78;
+  border-color: #ad6c78;
+  color: #fff6eb;
+  margin-top: 24px;
+}
+.sig-cover-roadtrip .sig-cover-type small {
+  color: #945c65;
+}
+.cover-road-car {
+  position: absolute;
+  bottom: 12%;
+  left: -50%;
+  width: 110px;
+  opacity: 0;
+  transition:
+    transform 1.8s,
+    opacity 0.5s;
+}
+.sig-cover-roadtrip.opening .bow-loop.left {
+  transform: translateX(-180px) rotate(-25deg);
+  opacity: 0;
+}
+.sig-cover-roadtrip.opening .bow-loop.right {
+  transform: translateX(180px) rotate(25deg);
+  opacity: 0;
+}
+.sig-cover-roadtrip.opening .bow-tail.left {
+  transform: translate(-100px, 200px) rotate(30deg);
+  opacity: 0;
+}
+.sig-cover-roadtrip.opening .bow-tail.right {
+  transform: translate(100px, 200px) rotate(-30deg);
+  opacity: 0;
+}
+.sig-cover-roadtrip.opening .ribbon-band {
+  transform: scaleX(0);
+}
+.sig-cover-roadtrip.opening .cover-road-car {
+  opacity: 1;
+  transform: translateX(600px);
+}
+.sig-cover-garden {
+  background: #e9ecdf;
+  color: #405643;
+}
+.garden-gate-arch {
+  position: absolute;
+  inset: 28px 22px 25px;
+  border: 1px solid #8c9a73;
+  border-radius: 160px 160px 0 0;
+  pointer-events: none;
+}
+.garden-gate {
+  position: absolute;
+  inset: 12% 50% 4% 8%;
+  border: 1px solid #8f9f7a;
+  border-radius: 130px 0 0 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 18px,
+    #80926825 19px,
+    #80926825 20px
+  );
+  transform-origin: 0 50%;
+  transition: transform 1.7s;
+}
+.garden-gate.right {
+  inset: 12% 8% 4% 50%;
+  border-radius: 0 130px 0 0;
+  transform-origin: 100% 50%;
+}
+.garden-gate > svg {
+  position: absolute;
+  width: 130%;
+  max-width: none;
+  bottom: 0;
+  left: -40%;
+  color: #7c9468;
+  opacity: 0.55;
+}
+.garden-gate.right > svg {
+  left: auto;
+  right: -40%;
+  transform: scaleX(-1);
+}
+.sig-cover-garden .sig-open-button {
+  background: #506349;
+  color: #f2efdc;
+  border-color: #506349;
+}
+.sig-cover-garden.opening .garden-gate.left {
+  transform: perspective(600px) rotateY(-110deg);
+}
+.sig-cover-garden.opening .garden-gate.right {
+  transform: perspective(600px) rotateY(110deg);
+}
+/* Ten invitation heroes */
+.lotus-folio {
+  background: #fbf5e4;
+  color: #997b39;
+  padding-top: 150px;
+  justify-content: flex-start;
+  min-height: 770px;
+}
+.folio-crown {
+  position: absolute;
+  width: 105%;
+  max-width: none;
+  left: -2.5%;
+  top: -37%;
+  color: #b49753;
+  opacity: 0.7;
+  animation: slow-turn 180s linear infinite;
+}
+.lotus-family-layout {
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  margin: 33px 0 25px;
+}
+.lotus-family-layout span {
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.12em;
+}
+.lotus-family-layout p {
+  font-size: 12px;
+  line-height: 1.9;
+  margin-top: 8px;
+}
+.lotus-family-layout svg {
+  width: 50px;
+}
+.lotus-folio .sig-names.inline {
+  font-size: clamp(31px, 10cqw, 60px);
+  gap: 0.2em;
+}
+.lotus-couple {
+  width: 88%;
+  max-height: 280px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  margin: 23px auto 18px;
+}
+.lotus-folio .sig-date-line {
+  font-size: 9px !important;
+}
+.folio-flourish {
+  font-size: 50px;
+  line-height: 1;
+  margin-top: 20px;
+}
+.palace-arrival {
+  background: #143c31;
+  color: #f4e7c4;
+  min-height: 800px;
+  justify-content: flex-start;
+  padding-top: 105px;
+}
+.palace-arch-border {
+  position: absolute;
+  inset: 24px 20px;
+  border: 1px solid #bda266;
+  border-radius: 180px 180px 0 0;
+  z-index: -1;
+  opacity: 0.65;
+}
+.palace-arch-border:before {
+  position: absolute;
+  inset: 8px;
+  content: "";
+  border: 1px solid #bda26660;
+  border-radius: 180px 180px 0 0;
+}
+.palace-arrival .sig-names {
+  margin: 30px 0 24px;
+  font-size: clamp(48px, 15cqw, 90px);
+}
+.palace-arrival > .palace-illustration {
+  width: 110%;
+  margin: 15px 0 5px;
+  opacity: 0.7;
+}
+.palace-tuskers {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 23px;
+  gap: 20px;
+  color: #bca363;
+}
+.palace-tuskers svg {
+  width: 42%;
+}
+.palace-tuskers svg:last-child {
+  transform: scaleX(-1);
+}
+.procession-poster {
+  background: #35172b;
+  color: #f0dab1;
+  padding-top: 100px;
+  min-height: 760px;
+  justify-content: flex-start;
+}
+.poster-headline {
+  font-family: var(--serif);
+  font-size: clamp(43px, 14cqw, 86px);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  margin-top: 35px;
+  text-align: left;
+  align-self: flex-start;
+}
+.poster-headline em {
+  color: #d1a860;
+}
+.poster-date {
+  align-self: flex-end;
+  font-size: 78px;
+  line-height: 1;
+  border-top: 1px solid #a8804b;
+  margin-top: 30px;
+  padding-top: 13px;
+}
+.poster-date span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 7px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+.poster-couple {
+  margin-top: 20px;
+  align-self: flex-start;
+  text-align: left;
+  width: 100%;
+}
+.poster-couple .sig-names.inline {
+  font-size: 35px;
+  justify-content: flex-start;
+}
+.poster-couple > span {
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 9px;
+}
+.night-procession {
+  width: 150%;
+  max-width: none;
+  display: flex;
+  gap: 10px;
+  color: #c19b5c;
+  align-self: flex-start;
+  margin-top: 30px;
+  animation: night-parade 25s ease-in-out infinite alternate;
+}
+.night-procession svg {
+  width: 31%;
+  transform: scaleX(-1);
+}
+.procession-poster > p {
+  font-family: var(--sans);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  margin-top: 25px;
+}
+.night-lights {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.night-lights i {
+  position: absolute;
+  top: 10px;
+  width: 3px;
+  height: 3px;
+  box-shadow: 0 0 13px #e4bc6d;
+  background: #e4bc6d;
+  border-radius: 50%;
+  animation: lantern-flicker 3s ease-in-out infinite;
+}
+.mayura-portrait {
+  background: #0c4943;
+  color: #efdfb3;
+  min-height: 760px;
+  justify-content: flex-start;
+  padding-top: 75px;
+}
+.mayura-title {
+  font-size: 46px;
+  line-height: 1.05;
+  letter-spacing: 0.07em;
+}
+.mayura-title i {
+  font-size: 16px;
+  letter-spacing: 0;
+  display: block;
+  margin-top: 10px;
+}
+.mayura-fan {
+  width: 150%;
+  max-width: none;
+  position: absolute;
+  top: 28%;
+  left: -25%;
+  color: #b2a671;
+  opacity: 0.6;
+  z-index: -1;
+  transform-origin: 50% 85%;
+  animation: fan-sway 13s ease-in-out infinite;
+}
+.mayura-medallion {
+  border: 1px solid #b8a66c;
+  border-radius: 48%;
+  width: 85%;
+  padding: 40px 15px;
+  background: #0c4943e8;
+  margin-top: 80px;
+  box-shadow:
+    0 0 0 8px #0c4943,
+    0 0 0 9px #b8a66c55;
+}
+.mayura-medallion .sig-names {
+  font-size: clamp(43px, 13cqw, 78px);
+  margin-top: 20px;
+}
+.mayura-portrait > .sig-date-line {
+  margin-top: auto;
+  padding-top: 45px;
+}
+.flight-arrival {
+  min-height: 800px;
+  background: #112033;
+  color: #f9edda;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 33px 28px 40px;
+  text-align: left;
+}
+.flight-arrival > img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.flight-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#08162980, transparent 40%, #071627bd);
+  z-index: -1;
+}
+.airline-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.14em;
+  color: #e2cda2;
+  padding-right: 30px;
+}
+.flight-hero-title {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 280px;
+}
+.flight-hero-title h2 {
+  font-size: clamp(48px, 16cqw, 96px);
+  margin: 17px 0 22px;
+  color: #fff3dd;
+  text-align: left;
+  line-height: 0.98;
+}
+.flight-hero-title h2 em {
+  color: #debf8f;
+}
+.flight-hero-title .sig-names.inline {
+  font-size: 29px;
+  justify-content: flex-start;
+  letter-spacing: 0;
+}
+.flight-hero-title .sig-date-line {
+  font-size: 7px !important;
+  margin-top: 25px;
+  max-width: 80%;
+}
+.arrival-plane {
+  position: absolute;
+  width: 100px;
+  right: 4%;
+  top: 24%;
+  transform: rotate(-18deg);
+  color: #decca6;
+  animation: airplane-glide 9s ease-in-out infinite;
+}
+.arrival-coordinate {
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.15em;
+  margin-top: 35px;
+  color: #decba6;
+}
+.manuscript-letter {
+  background: #eadcbf;
+  color: #5c402d;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 50px 33px 50px;
+  min-height: 790px;
+  text-align: left;
+  box-shadow: inset 0 0 90px #a6824522;
+}
+.letter-edition {
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.15em;
+}
+.letter-date {
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 13px;
+  align-self: flex-end;
+}
+.manuscript-heading {
+  font-size: clamp(56px, 18cqw, 105px);
+  line-height: 0.91;
+  margin: 55px 0 35px;
+  letter-spacing: -0.04em;
+}
+.manuscript-heading em {
+  color: #987348;
+}
+.manuscript-address {
+  width: 100%;
+  max-width: 430px;
+}
+.manuscript-address > p:first-child {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+.manuscript-address > p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.manuscript-address .sig-names.inline {
+  justify-content: flex-start;
+  font-size: 30px;
+  margin-top: 25px;
+  font-style: italic;
+}
+.manuscript-seal {
+  align-self: flex-end;
+  border: 4px double #9b6548;
+  background: #936047;
+  width: 62px;
+  height: 62px;
+  border-radius: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 24px;
+  color: #e3c59c;
+  margin-top: 27px;
+  transform: rotate(-12deg);
+}
+.manuscript-seal i {
+  font-size: 12px;
+}
+.letter-bottom {
+  border-top: 1px solid #98734466;
+  width: 100%;
+  margin-top: 32px;
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.12em;
+}
+.letter-bottom span {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1;
+}
+.botanical-editorial {
+  background: #e9eeeb;
+  color: #415762;
+  min-height: 750px;
+  padding-top: 65px;
+  justify-content: flex-start;
+}
+.botanical-side-label {
+  position: absolute;
+  writing-mode: vertical-rl;
+  left: 12px;
+  top: 85px;
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.17em;
+  color: #6e8a87;
+}
+.portrait-oval {
+  width: 75%;
+  height: 310px;
+  border: 1px solid #95aaa0;
+  padding: 10px;
+  border-radius: 50% 50% 45% 45%;
+  position: relative;
+  margin-bottom: 35px;
+  background: #f5f3e8;
+}
+.portrait-oval > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50% 50% 45% 45%;
+  mix-blend-mode: multiply;
+}
+.portrait-oval > svg {
+  position: absolute;
+  width: 75%;
+  height: 80%;
+  left: -25%;
+  bottom: -2%;
+  color: #758c7a;
+  z-index: 2;
+}
+.portrait-oval > svg:last-child {
+  left: auto;
+  right: -25%;
+  transform: scaleX(-1);
+}
+.botanical-editorial > .sig-names {
+  font-size: clamp(32px, 11cqw, 64px);
+  margin-top: 20px;
+}
+.botanical-editorial > .sig-date-line {
+  margin-top: 25px;
+}
+.botanical-handwriting {
+  font-style: italic;
+  font-size: 18px !important;
+  color: #7b9589;
+  margin-top: 30px;
+}
+.lace-letterhead {
+  background: #fdfaf1;
+  color: #7b6a53;
+  padding: 70px 35px;
+  min-height: 760px;
+  justify-content: flex-start;
+}
+.lace-paper-edge {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.32;
+  z-index: -2;
+}
+.lace-letterhead:before {
+  content: "";
+  position: absolute;
+  inset: 25px;
+  background: #fffdf6eb;
+  border: 1px solid #cfc0a040;
+  z-index: -1;
+  box-shadow: 0 0 25px #6a564a07;
+}
+.lace-monogram {
+  border: 1px solid #baa77b;
+  border-radius: 50%;
+  width: 105px;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  font-style: italic;
+  font-size: 39px;
+  color: #a38b5e;
+  position: relative;
+  margin-bottom: 35px;
+}
+.lace-monogram:after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dotted #c8b999;
+  border-radius: 50%;
+}
+.lace-monogram i {
+  font-size: 21px;
+}
+.lace-letterhead > p {
+  font-size: 15px;
+}
+.lace-letter-small {
+  font-family: var(--sans);
+  font-size: 6px !important;
+  letter-spacing: 0.13em;
+  margin-top: 17px;
+  line-height: 2.2 !important;
+}
+.lace-letterhead > .sig-names.inline {
+  font-size: clamp(36px, 12cqw, 70px);
+  font-style: italic;
+  margin: 35px 0;
+}
+.lace-date {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 5px 0 27px;
+}
+.lace-date span {
+  font-size: 9px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-top: 1px solid #cdbd9e;
+  border-bottom: 1px solid #cdbd9e;
+  padding: 10px 0;
+}
+.lace-date strong {
+  font-size: 58px;
+  line-height: 1;
+  font-weight: 400;
+}
+.lace-tassel {
+  font-size: 32px;
+  color: #baaa85;
+  margin-top: 35px;
+}
+.roadtrip-arrival {
+  padding: 65px 27px 30px;
+  min-height: 810px;
+  color: #7e4c52;
+  background: #f7e8d8;
+  justify-content: space-between;
+}
+.roadtrip-arrival > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  z-index: -2;
+}
+.roadtrip-arrival:after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(#faf0dfbb, transparent 65%, #eee2cc55);
+  z-index: -1;
+}
+.roadtrip-postmark {
+  border: 2px double #a77e7166;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--sans);
+  font-size: 7px;
+  letter-spacing: 0.09em;
+  align-self: flex-end;
+  transform: rotate(15deg);
+  color: #a67b70;
+}
+.roadtrip-postmark span {
+  font-size: 5px;
+  margin-top: 3px;
+}
+.roadtrip-postmark i {
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.3;
+}
+.roadtrip-title {
+  padding-bottom: 210px;
+  width: 100%;
+}
+.roadtrip-title h2 {
+  font-size: clamp(43px, 14cqw, 80px);
+  line-height: 0.99;
+  margin: 21px 0;
+}
+.roadtrip-title .sig-names.inline {
+  font-size: 27px;
+  letter-spacing: 0;
+}
+.roadtrip-title .sig-kicker {
+  font-size: 6px;
+  color: #866b51;
+}
+.arrival-car {
+  width: 120px;
+  position: absolute;
+  bottom: 14%;
+  left: calc(50% - 60px);
+  filter: drop-shadow(0 4px 5px #4d352b25);
+  animation: car-idle 3s ease-in-out infinite;
+}
+.roadtrip-destination {
+  width: 100%;
+  padding: 15px;
+  background: #fbf2dfcc;
+  border: 1px solid #c5b19380;
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+}
+.roadtrip-destination strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.secret-garden {
+  background: #e9eadb;
+  color: #3d523f;
+  min-height: 800px;
+  padding: 95px 35px 55px;
+  justify-content: flex-start;
+}
+.secret-garden:before {
+  content: "";
+  position: absolute;
+  inset: 22px 18px 25px;
+  border: 1px solid #80906b;
+  border-radius: 180px 180px 0 0;
+  z-index: -1;
+}
+.secret-garden h2 {
+  font-size: clamp(66px, 22cqw, 130px);
+  line-height: 0.83;
+  margin: 35px 0 43px;
+}
+.secret-garden h2 em {
+  font-size: 0.72em;
+  line-height: 1.3;
+}
+.garden-vine {
+  position: absolute;
+  width: 50%;
+  height: 70%;
+  bottom: 0;
+  left: -19%;
+  color: #6c875e;
+  opacity: 0.55;
+  z-index: -1;
+  transform-origin: 50% 100%;
+  animation: palm-sway 12s ease-in-out infinite;
+}
+.garden-vine.right {
+  left: auto;
+  right: -19%;
+  scale: -1 1;
+  animation-delay: -6s;
+}
+.garden-name-plaque {
+  border-top: 1px solid #99a183;
+  border-bottom: 1px solid #99a183;
+  padding: 25px 5px;
+}
+.garden-name-plaque .sig-names.inline {
+  font-size: 30px;
+}
+.garden-name-plaque > p {
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 17px;
+}
+.garden-time-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 35px;
+}
+.garden-time-card span {
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.12em;
+}
+.garden-time-card strong {
+  font-size: 25px;
+  font-weight: 400;
+}
+.garden-pond {
+  width: 60px;
+  margin-top: 28px;
+  color: #9b9d6b;
+}
+/* Dates, keepsakes, stories and individual section compositions. */
+.sig-flight .sig-panel {
+  background: #122335;
+  color: #f0e4cd;
+}
+.sig-flight .sig-kicker {
+  color: #c9b38c;
+}
+.sig-flight .sig-action {
+  background: #d9c49a;
+  color: #17283b;
+  border-color: #d9c49a;
+}
+.sig-flight .signature-month,
+.sig-flight .signature-rsvp-success {
+  color: inherit;
+}
+.flight-departure {
+  text-align: left !important;
+  background: #eee5d4 !important;
+  color: #233247 !important;
+  padding-top: 55px;
+}
+.airport-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 18px;
+}
+.airport-heading h2 {
+  font-size: 47px;
+}
+.airport-heading > svg {
+  width: 60px;
+  color: #b59966;
+}
+.flight-departure .countdown {
+  margin: 35px 0;
+  color: #233247;
+}
+.flight-departure .countdown strong {
+  font-family: var(--sans);
+  font-size: 32px;
+  font-weight: 400;
+}
+.flight-departure .countdown span {
+  color: #8d7550;
+  font-size: 5px;
+}
+.boarding-pass {
+  position: relative;
+  background: #faf7eb;
+  color: #25384d;
+  border: 1px solid #c6b994;
+  padding: 23px 18px 0;
+  margin-bottom: 23px;
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 9px 20px #26334412;
+}
+.boarding-pass:before,
+.boarding-pass:after {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: #eee5d4;
+  border-radius: 50%;
+  bottom: 44px;
+  left: -10px;
+}
+.boarding-pass:after {
+  left: auto;
+  right: -10px;
+}
+.boarding-pass > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.boarding-pass > div > span,
+.boarding-pass small {
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.1em;
+}
+.boarding-pass strong {
+  font-family: var(--sans);
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+.boarding-pass > svg {
+  width: 50px;
+}
+.boarding-pass > div:nth-of-type(2) {
+  text-align: right;
+}
+.boarding-pass footer {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px dashed #b7a98c;
+  padding: 16px 0;
+  font-family: var(--sans);
+  font-size: 5px;
+  margin-top: 12px;
+}
+.flight-departure .sig-action {
+  background: #22384c;
+  color: #f3e9d3;
+  border-color: #22384c;
+}
+.roadtrip-post-office {
+  background: #f5e8df;
+}
+.roadtrip-post-office h2 {
+  color: #85515b;
+}
+.signature-postcard {
+  width: 100%;
+  aspect-ratio: 1.35;
+  position: relative;
+  perspective: 1000px;
+  display: block;
+  margin: 30px auto 25px;
+  padding: 0;
+  max-width: 500px;
+  transform: rotate(-3deg);
+  background: none;
+  border: 0;
+}
+.postcard-front,
+.postcard-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  transition: transform 0.9s;
+  box-shadow: 5px 10px 22px #63473523;
+  border: 9px solid #fff8e8;
+}
+.postcard-front {
+  background: #ede1c7;
+  transform: rotateY(0);
+}
+.postcard-front > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  filter: saturate(0.75);
+}
+.postcard-front > span {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 14px;
+  font-size: 15px;
+  font-style: italic;
+  text-shadow: 0 1px 10px #fff5de;
+  line-height: 1.4;
+  color: #79505a;
+}
+.postcard-front strong {
+  font-size: 25px;
+  font-weight: 400;
+}
+.postcard-front small {
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  right: 0;
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.15em;
+  color: #5a5c45;
+}
+.postcard-back {
+  background: #faf4e7;
+  transform: rotateY(180deg);
+  text-align: left;
+  padding: 22px 18px;
+  color: #79505a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 7px;
+}
+.postcard-back > p {
+  font-size: 12px;
+  line-height: 1.7;
+  max-width: 80%;
+}
+.postcard-back > p:first-of-type {
+  font-style: italic;
+}
+.postcard-back > span {
+  font-family: var(--sans);
+  font-size: 6px;
+  line-height: 1.8;
+}
+.postcard-back > strong {
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+}
+.postcard-stamp {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border: 2px dotted #b6977d;
+  padding: 7px;
+  font-family: var(--sans);
+  font-size: 5px;
+  line-height: 1.8;
+  text-align: center;
+}
+.signature-postcard.flipped .postcard-front {
+  transform: rotateY(-180deg);
+}
+.signature-postcard.flipped .postcard-back {
+  transform: rotateY(0);
+}
+.signature-month {
+  max-width: 285px;
+  margin: 25px auto;
+}
+.signature-month > p {
+  text-transform: uppercase;
+  font-family: var(--sans);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  border-bottom: 1px solid #c4b59a88;
+  padding-bottom: 17px;
+  margin-bottom: 15px;
+}
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 7px 3px;
+}
+.month-grid > span {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 28px;
+  font-family: var(--serif);
+  font-size: 13px;
+}
+.month-grid .weekday {
+  font-family: var(--sans);
+  font-size: 7px;
+  color: var(--gold);
+}
+.month-grid > span > i {
+  font-style: normal;
+  position: relative;
+}
+.month-grid .wedding-day {
+  color: #a16e6c;
+}
+.month-grid .wedding-day > svg {
+  position: absolute;
+  inset: auto;
+  transform: scale(1.25);
+  color: #b9898b;
+}
+.date-keepsake {
+  background: #f4f0e8;
+}
+.scalloped-keepsake:before {
+  position: absolute;
+  content: "";
+  inset: 17px;
+  border: 1px dashed #c5b799;
+  border-radius: 100px 100px 3px 3px;
+  pointer-events: none;
+}
+.scalloped-keepsake {
+  background: #f8f3e7;
+}
+.date-keepsake > h2 {
+  font-size: 41px;
+}
+.date-keepsake .countdown {
+  max-width: 300px;
+}
+.date-keepsake .countdown strong {
+  font-size: 29px;
+}
+.botanical-keepsake {
+  background: #dce4df;
+}
+.manuscript-date {
+  background: #e0cda6;
+  text-align: left !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.manuscript-date > .sig-kicker {
+  grid-column: 1/-1;
+}
+.manuscript-date > h2 {
+  font-size: 135px;
+  line-height: 0.8;
+  grid-row: span 2;
+  margin: 12px 0 !important;
+}
+.manuscript-date h2 small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.manuscript-date > p {
+  font-style: italic;
+  font-size: 18px;
+  margin: 0;
+}
+.manuscript-date > .sig-action {
+  align-self: start;
+  font-size: 7px;
+  padding: 10px;
+}
+.manuscript-date > .countdown {
+  grid-column: 1/-1;
+  width: 100%;
+  margin-top: 20px;
+}
+.signature-date-lotus {
+  background: #f3ead1;
+  color: #8e7138;
+}
+.signature-date-palace {
+  background: #d7cfac;
+  color: #244336;
+}
+.signature-date-procession {
+  background: #281529;
+  color: #e9d1a5;
+}
+.signature-date-peacock {
+  background: #e3dec1;
+  color: #29574d;
+}
+.signature-date-garden {
+  background: #dce1c9;
+  color: #485c42;
+}
+.signature-date-garden > svg {
+  height: 85px;
+}
+.single-lantern {
+  width: 30px;
+  height: 45px;
+  border-radius: 48% 48% 30% 30%;
+  background: radial-gradient(ellipse at 50% 30%, #ffe1a4, #a17142);
+  box-shadow: 0 0 60px #d9ac6550;
+  margin: 0 auto 28px;
+}
+.date-roundel {
+  border: 1px solid var(--gold);
+  width: 135px;
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 50%;
+  margin: 30px auto;
+  box-shadow:
+    0 0 0 7px transparent,
+    0 0 0 8px color-mix(in srgb, var(--gold) 30%, transparent);
+}
+.date-roundel strong {
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 400;
+}
+.date-roundel span {
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.signature-date-procession .date-roundel {
+  border-radius: 0;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-top: 1px solid #91754d;
+  border-bottom: 1px solid #91754d;
+  box-shadow: none;
+  flex-direction: row;
+  padding: 20px;
+  gap: 20px;
+}
+.signature-date-procession .date-roundel strong {
+  font-size: 85px;
+}
+.signature-date-peacock .date-roundel {
+  border-radius: 60% 60% 42% 42%;
+  height: 165px;
+}
+.lotus-story {
+  background: #fbf5e4;
+  color: #8c7139;
+}
+.story-lotus-medallion {
+  border: 1px solid #baa15a;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 22px;
+}
+.story-lotus-medallion svg {
+  width: 40px;
+}
+.lotus-family-names {
+  display: grid;
+  grid-template-columns: 1fr 45px 1fr;
+  align-items: center;
+  gap: 13px;
+  border-top: 1px solid #c4ae7755;
+  border-bottom: 1px solid #c4ae7755;
+  padding: 27px 0;
+  margin-top: 35px;
+}
+.lotus-family-names > span {
+  font-size: 25px;
+  overflow-wrap: anywhere;
+}
+.lotus-family-names small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 4px;
+  letter-spacing: 0.07em;
+  line-height: 1.9;
+  margin-top: 12px;
+}
+.lotus-family-names svg {
+  width: 45px;
+}
+.palace-houses {
+  background: #153b31;
+  color: #f1e2ba;
+}
+.house-arches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 35px;
+}
+.house-arches > div {
+  border: 1px solid #b39c655c;
+  border-radius: 90px 90px 0 0;
+  padding: 35px 10px 20px;
+}
+.house-arches svg {
+  width: 85px;
+  margin: 0 auto 20px;
+  color: #bca363;
+}
+.house-arches h3 {
+  font-size: 25px;
+  overflow-wrap: anywhere;
+}
+.house-arches p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 9px;
+}
+.night-story {
+  background: #422036;
+  color: #f0debd;
+  text-align: left !important;
+}
+.night-story > h2 {
+  text-align: left;
+}
+.light-timeline {
+  border-left: 1px solid #af874b80;
+  margin: 40px 0 0 12px;
+  padding-left: 28px;
+}
+.light-timeline article {
+  position: relative;
+  padding: 0 0 38px;
+}
+.light-timeline article:last-child {
+  padding-bottom: 0;
+}
+.light-timeline article > i {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: -35px;
+  top: 2px;
+  background: #e3bd79;
+  box-shadow: 0 0 20px #d6a45250;
+  border-radius: 50%;
+  animation: lantern-flicker 4s ease-in-out infinite;
+}
+.light-timeline article > span {
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.12em;
+  color: #bda16c;
+}
+.light-timeline h3 {
+  font-size: 27px;
+  margin-top: 8px;
+}
+.light-timeline p {
+  font-size: 13px;
+  margin-top: 12px;
+  line-height: 1.9;
+}
+.mayura-story {
+  background: #d8d4ad;
+  color: #214e47;
+}
+.mayura-story-orbits {
+  position: relative;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 25px;
+  max-width: 400px;
+}
+.mayura-story-orbits > svg {
+  position: absolute;
+  width: 110%;
+  max-width: none;
+  opacity: 0.4;
+  color: #8b8b57;
+  animation: slow-turn 130s linear infinite;
+}
+.mayura-story-orbits > img {
+  width: 64%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 48%;
+  position: relative;
+  mix-blend-mode: multiply;
+}
+.mayura-story-orbits > span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 1px solid #6f805d;
+  padding: 17px;
+  border-radius: 50%;
+  font-family: var(--sans);
+  font-size: 5px;
+  line-height: 1.8;
+  background: #dedbb9;
+}
+.travel-document {
+  background: #eee6d5 !important;
+  color: #2d4054 !important;
+}
+.wedding-passport {
+  margin: 30px auto;
+  max-width: 470px;
+  text-align: left;
+  perspective: 1000px;
+}
+.passport-cover {
+  width: 100%;
+  min-height: 290px;
+  padding: 25px;
+  border: 4px double #b7a272;
+  background: #1e3349;
+  color: #e3d0a5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 5px 9px 22px #11253626;
+  transition: transform 0.5s;
+}
+.passport-cover > span,
+.passport-cover > small {
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.12em;
+  line-height: 1.8;
+}
+.passport-cover > svg {
+  width: 70px;
+  height: 48px;
+  margin: 22px 0;
+}
+.passport-cover h3 {
+  font-size: 43px;
+  line-height: 0.95;
+  margin-bottom: 18px;
+}
+.passport-cover h3 em {
+  font-weight: 400;
+}
+.passport-cover > p {
+  font-size: 16px;
+}
+.passport-cover > small {
+  margin-top: 22px;
+  border-top: 1px solid #9f8b6650;
+  padding-top: 15px;
+}
+.passport-open .passport-cover {
+  min-height: 80px;
+  box-shadow: none;
+  padding: 15px;
+  transform: rotateX(0);
+  border-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 35px;
+  gap: 5px;
+}
+.passport-open .passport-cover h3,
+.passport-open .passport-cover p {
+  display: none;
+}
+.passport-open .passport-cover > svg {
+  width: 35px;
+  height: 25px;
+  margin: 0;
+  grid-row: span 2;
+}
+.passport-open .passport-cover > small {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 5px;
+  grid-column: 1;
+  text-align: left;
+}
+.passport-open .passport-cover > span {
+  text-align: left;
+}
+.passport-spread {
+  padding: 23px 18px;
+  background: #f8f2df;
+  border: 4px double #b5a17c;
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  gap: 18px;
+  animation: signature-page-arrive 0.6s both;
+}
+.passport-photo > img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border: 1px solid #aa9973;
+}
+.passport-photo > span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.13em;
+  margin-top: 8px;
+}
+.passport-spread dl {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.passport-spread dt {
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.1em;
+  color: #8d7a55;
+}
+.passport-spread dd {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+.passport-mrz {
+  grid-column: 1/-1;
+  font-family: monospace;
+  font-size: 7px;
+  overflow-wrap: anywhere;
+  color: #3c4f59;
+  border-top: 1px solid #b6a68160;
+  padding-top: 15px;
+  letter-spacing: 0.04em;
+}
+.scroll-journey {
+  position: relative;
+  max-width: 420px;
+  margin: 35px auto 0;
+  height: 820px;
+  text-align: left;
+}
+.scroll-journey > svg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  color: #dbc49e;
+}
+.journey-stop {
+  position: absolute;
+  width: 55%;
+  padding: 16px;
+  background: #f6ecdfd6;
+  box-shadow: 0 5px 15px #6e4d4010;
+  color: #82555c;
+  border: 1px solid #cbb89d50;
+}
+.journey-stop > span {
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.13em;
+  color: #9f7d66;
+}
+.journey-stop h3 {
+  font-size: 27px;
+  line-height: 1.05;
+  margin-top: 10px;
+}
+.journey-stop p {
+  font-size: 11px;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+.journey-stop.one {
+  left: 0;
+  top: 12%;
+}
+.journey-stop.two {
+  right: 0;
+  top: 45%;
+}
+.journey-stop.three {
+  left: 0;
+  bottom: 3%;
+}
+.journey-flight {
+  height: 700px;
+}
+.journey-flight .journey-stop {
+  background: #f8f1e1;
+  color: #284358;
+  border: 1px solid #b4a37b;
+}
+.journey-flight .journey-stop > span {
+  color: #9a845e;
+}
+.journey-flight .journey-stop h3 {
+  font-size: 25px;
+}
+.manuscript-story {
+  background: #ecdfc3;
+}
+.folded-love-letter {
+  position: relative;
+  margin: 30px auto 0;
+  max-width: 470px;
+  transform: rotate(-2deg);
+  box-shadow: 5px 13px 22px #75553420;
+  border: 1px solid #b8a077;
+}
+.folded-love-letter > button {
+  width: 100%;
+  background: #f6ecd4;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+.folded-love-letter > button > span {
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.15em;
+}
+.folded-love-letter h3 {
+  font-size: 40px;
+  line-height: 1.08;
+}
+.folded-love-letter h3 em {
+  font-weight: 400;
+  color: #9a7c51;
+}
+.letter-inside {
+  background: #fbf3e1;
+  padding: 30px 25px;
+  text-align: left;
+  border-top: 1px dashed #bcaa8670;
+  animation: signature-page-arrive 0.7s both;
+}
+.letter-inside > p {
+  font-size: 17px;
+  line-height: 1.9;
+  font-style: italic;
+}
+.letter-inside > span {
+  display: block;
+  font-size: 15px;
+  margin-top: 25px;
+}
+.letter-inside > strong {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  margin-top: 15px;
+}
+.botanical-story {
+  background: #f4f3e9;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+.pressed-flower-photo {
+  width: 78%;
+  max-width: 360px;
+  aspect-ratio: 0.9;
+  margin: 10px auto 0;
+  transform: rotate(-5deg);
+  background: #fffaf0;
+  padding: 12px 12px 30px;
+  box-shadow: 5px 8px 20px #50625420;
+  position: relative;
+}
+.pressed-flower-photo > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.pressed-flower-photo > svg {
+  position: absolute;
+  right: -22%;
+  bottom: -8%;
+  width: 65%;
+  color: #718c73;
+  transform: rotate(20deg);
+}
+.pressed-flower-photo > span {
+  position: absolute;
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.13em;
+  bottom: 12px;
+  left: 12px;
+}
+.botanical-story > div > h2 {
+  margin: 17px 0 24px;
+  text-align: left;
+}
+.botanical-story > div > p {
+  font-size: 16px;
+}
+.lace-story {
+  background: #fbf8ef;
+}
+.lace-portrait {
+  margin: 30px auto;
+  width: 75%;
+  max-width: 300px;
+  aspect-ratio: 0.8;
+  border: 1px solid #bdab87;
+  outline: 5px dotted #e1d7c0;
+  outline-offset: 5px;
+  padding: 7px;
+  border-radius: 50%;
+  background: #fffaf0;
+}
+.lace-portrait > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+.lace-signoff {
+  font-size: 30px !important;
+  font-style: italic;
+  color: #a08a5e;
+}
+.roadtrip-story {
+  background: #f7eee0;
+  color: #84515a;
+}
+.roadtrip-story > .sig-fine-print {
+  font-style: italic;
+  font-family: var(--serif);
+  font-size: 14px !important;
+}
+.roadtrip-story .scroll-journey {
+  background-image: url("/images/signature-coastal-road.webp");
+  background-size: 100% 100%;
+  border-radius: 180px 180px 0 0;
+  margin-top: 40px;
+  box-shadow: inset 0 0 60px #fff4df70;
+}
+.roadtrip-story .scroll-journey > svg {
+  background: #f9edda55;
+}
+.garden-story {
+  background: #f0f0e4;
+}
+.garden-story-plots {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  text-align: left;
+  margin-top: 32px;
+}
+.garden-story-plots > details {
+  border: 1px solid #a3ad8d;
+  padding: 22px;
+}
+.garden-story-plots summary {
+  display: grid;
+  grid-template-columns: 25px 1fr 35px;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  cursor: pointer;
+}
+.garden-story-plots summary::-webkit-details-marker {
+  display: none;
+}
+.garden-story-plots summary > span {
+  font-family: var(--sans);
+  font-size: 7px;
+  color: #8e9670;
+}
+.garden-story-plots summary > h3 {
+  font-size: 31px;
+}
+.garden-story-plots summary > svg {
+  width: 35px;
+  height: 50px;
+  color: #8f9b74;
+}
+.garden-story-plots details > p {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.garden-story-plots details[open] {
+  background: #e2e7d4;
+}
+.flight-events {
+  background: #101d2b !important;
+}
+.departures-board {
+  margin: 30px auto;
+  background: #0a1520;
+  padding: 15px;
+  border: 1px solid #a9946950;
+  font-family: var(--sans);
+  text-align: left;
+}
+.departures-board > header,
+.departures-board > div {
+  display: grid;
+  grid-template-columns: 53px 1fr 48px;
+  gap: 8px;
+  border-bottom: 1px solid #b69d6530;
+  padding: 15px 0;
+  align-items: center;
+}
+.departures-board > header {
+  font-size: 5px;
+  letter-spacing: 0.08em;
+  color: #baa678;
+  padding-top: 4px;
+}
+.departures-board > div > strong {
+  font-size: 6px;
+  font-weight: 400;
+  color: #d4bf8f;
+}
+.departures-board > div > span {
+  font-size: 8px;
+  line-height: 1.7;
+}
+.departures-board i {
+  font-size: 4px;
+  font-style: normal;
+  color: #bdb982;
+}
+.signature-events {
+  background: color-mix(in srgb, var(--paper) 90%, var(--gold));
+}
+.signature-event-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-top: 35px;
+}
+.signature-event-layout article {
+  padding: 30px 20px;
+  position: relative;
+}
+.signature-event-layout article > svg {
+  width: 55px;
+  height: 55px;
+  color: var(--gold);
+  margin: 0 auto 17px;
+}
+.signature-event-layout h3 {
+  font-size: 28px;
+  margin-bottom: 17px;
+}
+.signature-event-layout strong {
+  display: block;
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  margin-bottom: 13px;
+}
+.signature-event-layout p {
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 8px;
+}
+.event-number {
+  font-family: var(--sans);
+  font-size: 6px;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 12px;
+}
+.events-palace {
+  background: #e7dfc4;
+  color: #274a3c;
+}
+.events-palace .signature-event-layout {
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.events-palace article {
+  border: 1px solid #a795675c;
+  border-radius: 95px 95px 0 0;
+  padding: 38px 12px 25px;
+}
+.events-palace article > svg {
+  width: 60px;
+}
+.events-palace h3 {
+  font-size: 23px;
+  line-height: 1.2;
+}
+.events-palace article p {
+  font-size: 11px;
+}
+.events-procession {
+  background: #361c30;
+  color: #ead9b8;
+  text-align: left !important;
+}
+.events-procession .signature-event-layout article {
+  border-top: 1px solid #b18b535c;
+  text-align: left;
+  padding: 25px 10px 25px 48px;
+}
+.events-procession article > svg {
+  display: none;
+}
+.events-procession .event-number {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  font-size: 20px;
+}
+.events-peacock {
+  background: #174e46;
+  color: #eadbb0;
+}
+.events-peacock article {
+  border: 1px solid #ad9d624d;
+  border-radius: 45%;
+  padding: 40px 35px;
+}
+.events-manuscript {
+  background: #e9d9b9;
+  color: #63452e;
+}
+.events-manuscript .signature-event-layout {
+  text-align: left;
+  gap: 0;
+  border-top: 1px solid #a1855860;
+  border-bottom: 1px solid #a1855860;
+}
+.events-manuscript article {
+  padding: 25px 0 25px 45px;
+  border-bottom: 1px dashed #a1855840;
+}
+.events-manuscript article > svg {
+  display: none;
+}
+.events-manuscript .event-number {
+  position: absolute;
+  left: 0;
+  top: 28px;
+}
+.events-botanical {
+  background: #e0e7df;
+}
+.events-botanical .signature-event-layout article {
+  border: 1px solid #99ab9a80;
+  border-left: 4px solid #91a18b;
+  background: #f3f3e8;
+  text-align: left;
+  padding: 25px 20px;
+}
+.events-botanical article > svg {
+  width: 40px;
+  margin: 0 0 20px;
+}
+.events-lace {
+  background: #f6f0e3;
+}
+.events-lace .signature-event-layout {
+  background: #fffbf0;
+  outline: 5px dotted #d4c7a9;
+  outline-offset: 3px;
+  border: 1px solid #ccbb9780;
+  padding: 20px 16px;
+}
+.events-lace article {
+  border-bottom: 1px solid #c2ad825c;
+  padding: 18px 8px 30px;
+}
+.events-lace article:last-child {
+  border-bottom: 0;
+}
+.events-roadtrip {
+  background: #ead3c6;
+  color: #7c4b53;
+}
+.events-roadtrip article {
+  background: #faf3e4;
+  border-top: 1px dashed #c4aa92;
+  border-bottom: 1px dashed #c4aa92;
+  box-shadow: 3px 6px 12px #7d4c4520;
+  transform: rotate(-2deg);
+  position: relative;
+}
+.events-roadtrip article:before,
+.events-roadtrip article:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  left: -9px;
+  top: 50%;
+  background: #ead3c6;
+}
+.events-roadtrip article:after {
+  left: auto;
+  right: -9px;
+}
+.events-roadtrip article:nth-child(2) {
+  transform: rotate(2deg);
+}
+.events-garden {
+  background: #dce2ca;
+  color: #445b40;
+}
+.events-garden .signature-event-layout article {
+  border: 1px solid #a0ad88;
+  border-radius: 120px 120px 0 0;
+  background: #eff0df;
+}
+.events-lotus {
+  background: #f4ebd1;
+  color: #8c713d;
+}
+.events-lotus .signature-event-layout {
+  border-left: 1px solid #c4a66566;
+  margin-left: 15px;
+}
+.events-lotus article {
+  text-align: left;
+  padding: 25px 0 30px 28px;
+  border-bottom: 1px solid #c4a66533;
+}
+.events-lotus article > svg {
+  width: 42px;
+  height: 35px;
+  margin: 0 0 14px;
+}
+.events-lotus .event-number {
+  position: absolute;
+  left: -10px;
+  top: 33px;
+  background: #f4ebd1;
+  padding: 5px 0;
+}
+.signature-gallery {
+  background: var(--paper);
+}
+.signature-gallery h2 {
+  font-size: 37px;
+}
+.signature-photo-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin: 35px auto 25px;
+  max-width: 580px;
+}
+.signature-photo-mosaic figure {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+.signature-photo-mosaic img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+.signature-photo-mosaic figcaption {
+  font-style: italic;
+  font-size: 13px;
+  padding: 10px 6px;
+}
+.signature-photo-mosaic figure:first-child {
+  grid-column: 1/-1;
+}
+.signature-photo-mosaic figure:first-child img {
+  height: 310px;
+}
+.gallery-lotus {
+  background: #fbf5e4;
+  color: #91753c;
+}
+.gallery-lotus .signature-photo-mosaic img {
+  mix-blend-mode: multiply;
+}
+.gallery-palace .signature-photo-mosaic figure {
+  border: 1px solid #a18d5560;
+  padding: 5px;
+}
+.gallery-palace .signature-photo-mosaic figure:first-child {
+  border-radius: 140px 140px 0 0;
+}
+.gallery-peacock {
+  background: #174d45;
+  color: #eadcb0;
+}
+.gallery-peacock .signature-photo-mosaic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.gallery-peacock .signature-photo-mosaic figure {
+  width: 75%;
+  border-radius: 45%;
+  border: 1px solid #a8965b80;
+  padding: 8px;
+}
+.gallery-peacock .signature-photo-mosaic img {
+  height: 270px;
+  border-radius: 45%;
+}
+.gallery-peacock figcaption {
+  padding-bottom: 12px;
+}
+.gallery-botanical {
+  background: #edf0e7;
+}
+.gallery-botanical .signature-photo-mosaic figure {
+  background: #fffaf0;
+  padding: 7px 7px 4px;
+  box-shadow: 4px 7px 15px #324b3b12;
+  transform: rotate(-3deg);
+}
+.gallery-botanical .signature-photo-mosaic figure:nth-child(2) {
+  transform: rotate(4deg);
+}
+.gallery-lace .signature-photo-mosaic figure {
+  border: 1px solid #d7c8aa;
+  border-radius: 110px 110px 0 0;
+  padding: 6px;
+}
+.gallery-lace .signature-photo-mosaic figure img {
+  border-radius: 110px 110px 0 0;
+  height: 220px;
+}
+.gallery-roadtrip {
+  background: #f4e3d6;
+  color: #8b535c;
+}
+.gallery-roadtrip .signature-photo-mosaic figure {
+  padding: 8px 8px 0;
+  background: #fff7e8;
+  transform: rotate(-3deg);
+  box-shadow: 5px 6px 17px #7b504723;
+}
+.gallery-roadtrip .signature-photo-mosaic figure:nth-child(2) {
+  transform: rotate(5deg);
+}
+.gallery-roadtrip .signature-photo-mosaic figure:first-child img {
+  height: 260px;
+}
+.gallery-roadtrip figcaption {
+  font-size: 15px;
+  padding: 14px 0;
+}
+.gallery-garden {
+  background: #eef0e1;
+}
+.gallery-garden .signature-photo-mosaic figure {
+  border: 1px solid #a4ae8c;
+  padding: 5px;
+}
+.gallery-garden .signature-photo-mosaic figure:first-child {
+  border-radius: 150px 150px 0 0;
+}
+.film-frame {
+  margin: 30px auto 0;
+  max-width: 570px;
+  border-top: 10px dashed #9d8b6b;
+  border-bottom: 10px dashed #9d8b6b;
+  padding: 15px 0 10px;
+  background: #122131;
+  position: relative;
+}
+.film-frame > img {
+  height: 330px;
+  width: 100%;
+  object-fit: cover;
+}
+.film-frame > span {
+  display: block;
+  font-family: monospace;
+  font-size: 6px;
+  letter-spacing: 0.16em;
+  padding: 13px 14px 0;
+  color: #d7bf8d;
+}
+.film-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 23px;
+  margin: 22px 0;
+  font-family: var(--sans);
+  font-size: 7px;
+}
+.film-controls button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--gold);
+  display: grid;
+  place-items: center;
+}
+.gallery-manuscript {
+  background: #e5d2ad;
+  color: #5e452c;
+}
+.gallery-manuscript .film-frame {
+  background: #68492f;
+  border-color: #bca074;
+}
+.gallery-manuscript .film-frame > img {
+  filter: sepia(0.4);
+}
+.gallery-procession {
+  background: #472238;
+  color: #e7d0aa;
+}
+.gallery-procession .film-frame {
+  background: #251527;
+  border-color: #aa8657;
+}
+.sig-venue {
+  background: color-mix(in srgb, var(--paper) 85%, var(--gold));
+  isolation: isolate;
+}
+.sig-venue h2 {
+  font-size: clamp(34px, 10cqw, 58px);
+  overflow-wrap: anywhere;
+}
+.sig-venue > .sig-kicker {
+  margin-top: 20px;
+}
+.sig-venue > .sig-action {
+  margin-top: 18px;
+}
+.venue-flight {
+  background: #13283e !important;
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.venue-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  z-index: -2;
+}
+.venue-flight:after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(#11243ad9, #11243a60);
+  z-index: -1;
+}
+.venue-flight h2 {
+  color: #f6e7cc;
+}
+.venue-flight p {
+  font-size: 14px;
+}
+.venue-roadtrip {
+  background: #f4e5d4;
+  color: #87505a;
+}
+.venue-roadtrip > svg {
+  width: 100px;
+  height: 80px;
+}
+.venue-lace {
+  background: #f1e9da;
+  color: #7c6952;
+}
+.venue-garden {
+  background: #d5dfc5;
+  color: #405b3a;
+}
+.venue-palace {
+  background: #12392e;
+  color: #e7d8b0;
+}
+.sig-reply {
+  background: var(--paper);
+}
+.sig-reply > h2 {
+  font-size: clamp(33px, 9cqw, 52px);
+}
+.signature-rsvp-success {
+  padding: 30px 20px;
+  border: 1px solid var(--gold);
+  margin-top: 28px;
+}
+.signature-rsvp-success > svg {
+  margin: 0 auto 20px;
+  color: var(--gold);
+}
+.signature-rsvp-success h3 {
+  font-size: 29px;
+  line-height: 1.2;
+}
+.signature-rsvp-success p {
+  font-size: 12px;
+  margin: 15px 0 25px;
+}
+.sig-reply .sig-action {
+  width: 100%;
+}
+.sig-reply form {
+  text-align: left;
+}
+.reply-lace {
+  background: #fffbf3;
+}
+.reply-lace form {
+  padding: 22px;
+  border: 1px dashed #cbb994;
+  border-radius: 0 0 55px 55px;
+}
+.reply-roadtrip {
+  background: #f5e5d9;
+  color: #83505a;
+}
+.reply-roadtrip form {
+  background: #fff7e9;
+  padding: 23px;
+  box-shadow: 5px 6px 20px #81544e16;
+  transform: rotate(-1deg);
+}
+.reply-garden {
+  background: #e5ead7;
+}
+.reply-garden form {
+  border: 1px solid #9daa84;
+  padding: 25px;
+}
+.reply-manuscript {
+  background: #ebdab9;
+  color: #684a32;
+}
+.reply-manuscript form {
+  border-top: 1px solid #a5885f66;
+  border-bottom: 1px solid #a5885f66;
+  padding: 25px 0;
+}
+.reply-palace {
+  background: #e2d9ba;
+  color: #244a3d;
+}
+.sig-closing {
+  background: color-mix(in srgb, var(--paper) 86%, var(--gold));
+  padding-bottom: 100px;
+}
+.sig-closing > h2 {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: clamp(41px, 13cqw, 76px);
+  line-height: 1.05;
+  margin: 25px auto;
+  overflow-wrap: anywhere;
+}
+.sig-closing h2 i {
+  font-size: 0.5em;
+  color: var(--gold);
+}
+.sig-closing > p {
+  font-family: var(--sans);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+.sig-brand {
+  display: block;
+  font-family: var(--sans);
+  font-size: 5px;
+  letter-spacing: 0.12em;
+  margin-top: 45px;
+  opacity: 0.7;
+}
+.sig-brand > span {
+  display: block;
+  font-family: var(--serif);
+  font-size: 22px;
+  letter-spacing: 0.25em;
+  margin-top: 13px;
+}
+.signature-nav {
+  position: sticky;
+  bottom: 12px;
+  margin: -65px auto 20px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--gold);
+  box-shadow: 0 5px 20px #0001;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 13px 16px;
+  font-family: var(--sans);
+  font-size: 6px;
+  border-radius: 25px;
+  width: max-content;
+  max-width: 95%;
+}
+.signature-nav a {
+  white-space: nowrap;
+}
+.sig-lace .signature-nav {
+  border-radius: 0;
+  border-style: dashed;
+}
+.sig-flight .signature-nav {
+  border-radius: 3px;
+}
+.sig-roadtrip .signature-nav {
+  border-radius: 2px;
+  background: #fff6e7;
+}
+.sig-manuscript .signature-nav {
+  border-radius: 0;
+  transform: rotate(-1deg);
+}
+/* Gallery miniatures preview the actual Signature compositions. */
+.signature-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  container-type: inline-size;
+}
+.signature-card > .lotus-orbit {
+  position: absolute;
+  width: 170%;
+  left: 15%;
+  top: -8%;
+  opacity: 0.35;
+  color: #b49a57;
+}
+.signature-card > .lotus-emblem {
+  width: 24%;
+  left: 38%;
+  top: 17%;
+}
+.signature-card > .gold-leaf-frame {
+  inset: 7%;
+}
+.signature-thumb-type {
+  position: absolute;
+  inset: 12% 12% 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  z-index: 3;
+}
+.thumb-kicker {
+  font-family: var(--sans);
+  font-size: 4cqw;
+  line-height: 1.8;
+  letter-spacing: 0.13em;
+  white-space: normal;
+}
+.thumb-names {
+  font-size: 18cqw;
+  line-height: 1.02;
+  font-family: var(--serif);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2cqw;
+  margin: 12cqw 0 0;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+.thumb-names > i {
+  font-size: 0.5em;
+  color: var(--gold);
+  line-height: 1.3;
+}
+.thumb-date {
+  font-family: var(--sans);
+  font-size: 3.7cqw;
+  letter-spacing: 0.13em;
+  margin-top: 12cqw;
+}
+.thumb-edition {
+  position: absolute;
+  bottom: 6%;
+  left: 0;
+  right: 0;
+  font-family: var(--sans);
+  font-size: 3cqw;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--gold);
+  z-index: 4;
+}
+.signature-card .signature-thumb-type > svg {
+  width: 38%;
+  height: 30%;
+  color: var(--gold);
+}
+.sig-thumb-lotus {
+  background: #faf2db;
+  color: #a0813c;
+}
+.sig-thumb-lotus .signature-thumb-type {
+  padding-top: 15%;
+}
+.sig-thumb-lotus .thumb-names {
+  font-size: 16cqw;
+}
+.sig-thumb-lotus .thumb-kicker {
+  font-size: 3.3cqw;
+}
+.sig-thumb-palace {
+  background: #153c31;
+  color: #eee0b6;
+}
+.sig-thumb-palace > .palace-illustration {
+  position: absolute;
+  bottom: 8%;
+  left: -5%;
+  width: 110%;
+  opacity: 0.55;
+}
+.sig-thumb-palace .gate-leaf {
+  inset: 5% 50% 5% 5%;
+}
+.sig-thumb-palace .gate-leaf.right {
+  inset: 5% 5% 5% 50%;
+}
+.sig-thumb-palace .gate-leaf > svg {
+  opacity: 0.12;
+}
+.sig-thumb-palace .signature-thumb-type {
+  justify-content: flex-start;
+  top: 17%;
+  bottom: 28%;
+}
+.sig-thumb-palace .thumb-names {
+  font-size: 18cqw;
+}
+.sig-thumb-procession {
+  background: #351b2c;
+  color: #eed6a6;
+}
+.sig-thumb-procession .signature-thumb-type {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  top: 14%;
+}
+.thumb-editorial {
+  font-family: var(--serif);
+  font-size: 22cqw;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin-top: 18cqw;
+  text-align: left;
+}
+.thumb-editorial i {
+  font-weight: 400;
+  color: var(--gold);
+}
+.sig-thumb-procession .thumb-names {
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 11cqw;
+  flex-wrap: wrap;
+  gap: 1.5cqw;
+  margin-top: 18cqw;
+}
+.sig-thumb-procession .thumb-date {
+  font-size: 3.3cqw;
+  margin-top: 10cqw;
+}
+.sig-thumb-procession .lantern-line {
+  top: 1%;
+  height: 18%;
+}
+.sig-thumb-procession .lantern-line i {
+  width: 2cqw;
+  height: 5cqw;
+  margin-top: calc(var(--i) * 1.5cqw);
+}
+.sig-thumb-procession .procession-row {
+  bottom: 9%;
+}
+.sig-thumb-peacock {
+  background: #0c514a;
+  color: #eadbac;
+}
+.sig-thumb-peacock > .cover-peacock {
+  width: 160%;
+  left: -30%;
+  bottom: -1%;
+  opacity: 0.6;
+}
+.sig-thumb-peacock .peacock-eye {
+  display: none;
+}
+.sig-thumb-peacock .signature-thumb-type {
+  justify-content: flex-start;
+  top: 17%;
+  bottom: 32%;
+}
+.sig-thumb-peacock .thumb-names {
+  font-size: 16cqw;
+  background: #0e4f48b8;
+  padding: 10cqw;
+  border: 1px solid #ae9e6766;
+  border-radius: 50%;
+}
+.sig-thumb-flight {
+  background: #13253b;
+  color: #f4e3c4;
+}
+.sig-thumb-flight .sig-cover-photo {
+  z-index: 0;
+  filter: brightness(0.75);
+}
+.sig-thumb-flight .cabin-window {
+  inset: 5%;
+  border-width: 2px;
+  border-radius: 45% 45% 30% 30%;
+  box-shadow: 0 0 0 7cqw #111e3377;
+}
+.sig-thumb-flight .cabin-window > span {
+  display: none;
+}
+.sig-thumb-flight > .cover-plane {
+  width: 27%;
+  top: 18%;
+  left: 12%;
+  z-index: 1;
+}
+.sig-thumb-flight .signature-thumb-type {
+  justify-content: flex-end;
+  inset: 13% 14% 18%;
+}
+.sig-thumb-flight .thumb-kicker {
+  position: absolute;
+  top: 0;
+  font-size: 3.2cqw;
+}
+.sig-thumb-flight .thumb-names {
+  font-size: 17cqw;
+  text-shadow: 0 1px 8px #0d172e;
+}
+.sig-thumb-flight .thumb-date {
+  margin-top: 10cqw;
+  font-size: 3.2cqw;
+}
+.sig-thumb-flight .signature-thumb-type > svg {
+  width: 20%;
+  height: 15%;
+  margin-top: 8cqw;
+}
+.sig-thumb-flight .thumb-edition {
+  color: #e2ca9b;
+}
+.sig-thumb-manuscript {
+  background: #e8d8b5;
+  color: #684a30;
+  box-shadow: inset 0 0 20px #8d672f30;
+}
+.sig-thumb-manuscript .script-lines {
+  font-size: 17cqw;
+  top: 30%;
+  left: 7%;
+  opacity: 0.1;
+}
+.sig-thumb-manuscript .manuscript-roller {
+  height: 5cqw;
+}
+.sig-thumb-manuscript .manuscript-roller.top {
+  top: 3%;
+}
+.sig-thumb-manuscript .manuscript-roller.bottom {
+  bottom: 3%;
+}
+.sig-thumb-manuscript .signature-thumb-type {
+  align-items: flex-start;
+  justify-content: flex-start;
+  top: 15%;
+  text-align: left;
+}
+.sig-thumb-manuscript .thumb-editorial {
+  font-size: 25cqw;
+  margin-top: 14cqw;
+}
+.sig-thumb-manuscript .thumb-names {
+  font-size: 10cqw;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1cqw;
+  margin-top: 16cqw;
+  font-style: italic;
+}
+.sig-thumb-manuscript .thumb-date {
+  font-size: 3cqw;
+  margin-top: 8cqw;
+}
+.sig-thumb-botanical {
+  background: #e6ece8;
+  color: #4a6267;
+}
+.sig-thumb-botanical .botanical-wreath {
+  inset: 6%;
+  opacity: 0.6;
+}
+.sig-thumb-botanical .vellum-sheet {
+  display: none;
+}
+.sig-thumb-botanical .signature-thumb-type {
+  justify-content: flex-start;
+  top: 12%;
+}
+.sig-thumb-botanical .thumb-kicker {
+  font-size: 3cqw;
+}
+.thumb-botanical-portrait {
+  width: 86%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 50% 50% 40% 40%;
+  margin-top: 8cqw;
+  mix-blend-mode: multiply;
+}
+.sig-thumb-botanical .thumb-names {
+  font-size: 12cqw;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1cqw;
+  margin-top: 10cqw;
+}
+.sig-thumb-botanical .thumb-date {
+  font-size: 3cqw;
+  margin-top: 7cqw;
+}
+.sig-thumb-lace {
+  background: #fbf8ef;
+  color: #938062;
+}
+.sig-thumb-lace .sig-lace-texture {
+  z-index: 0;
+  opacity: 0.8;
+}
+.sig-thumb-lace .lace-flap {
+  z-index: 1;
+}
+.sig-thumb-lace .pearl-thread {
+  display: none;
+}
+.sig-thumb-lace .signature-thumb-type {
+  justify-content: space-between;
+  top: 10%;
+  bottom: 14%;
+}
+.sig-thumb-lace .thumb-kicker {
+  font-size: 3cqw;
+}
+.sig-thumb-lace .thumb-names {
+  font-size: 11cqw;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5cqw;
+  flex-wrap: wrap;
+  margin: 10cqw 0 0;
+  font-style: italic;
+}
+.thumb-pearl-monogram {
+  position: absolute;
+  top: 41%;
+  border: 1cqw double #c4b79f;
+  border-radius: 50%;
+  width: 28cqw;
+  height: 28cqw;
+  background: radial-gradient(circle at 30% 25%, #fffef4, #ddcfb5);
+  color: #9d845b;
+  box-shadow: 0 2px 5px #82674433;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9cqw;
+  gap: 1cqw;
+  font-style: italic;
+}
+.thumb-pearl-monogram > i {
+  font-size: 5cqw;
+}
+.sig-thumb-lace .thumb-date {
+  font-size: 3.5cqw;
+  margin-top: auto;
+  padding-bottom: 0;
+}
+.sig-thumb-roadtrip {
+  background: #f5e5d6;
+  color: #89545e;
+}
+.sig-thumb-roadtrip > .embossed-florals,
+.sig-thumb-roadtrip > .satin-bow,
+.sig-thumb-roadtrip > .ribbon-band,
+.sig-thumb-roadtrip > .cover-road-car {
+  display: none;
+}
+.thumb-road-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.sig-thumb-roadtrip:after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: linear-gradient(#fff5e4a0, transparent 70%);
+}
+.sig-thumb-roadtrip .signature-thumb-type {
+  top: 14%;
+  bottom: 10%;
+  justify-content: flex-start;
+}
+.sig-thumb-roadtrip .thumb-kicker {
+  font-size: 3cqw;
+}
+.sig-thumb-roadtrip .thumb-names {
+  font-size: 14cqw;
+  margin-top: 9cqw;
+}
+.sig-thumb-roadtrip .thumb-date {
+  font-size: 3cqw;
+  margin-top: 8cqw;
+}
+.sig-thumb-roadtrip .signature-thumb-type > svg {
+  margin-top: auto;
+  width: 42%;
+  height: 19%;
+}
+.sig-thumb-garden {
+  background: #e3e8d3;
+  color: #465f44;
+}
+.sig-thumb-garden .garden-gate-arch {
+  inset: 5%;
+  border-radius: 45% 45% 0 0;
+}
+.sig-thumb-garden .garden-gate {
+  opacity: 0.4;
+}
+.sig-thumb-garden .signature-thumb-type {
+  justify-content: flex-start;
+  top: 15%;
+}
+.sig-thumb-garden .thumb-editorial {
+  font-size: 30cqw;
+  text-align: center;
+  margin-top: 14cqw;
+  line-height: 0.9;
+}
+.sig-thumb-garden .thumb-editorial > i {
+  font-size: 0.8em;
+  line-height: 1.2;
+}
+.sig-thumb-garden .thumb-names {
+  font-size: 10cqw;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5cqw;
+  flex-wrap: wrap;
+  margin-top: 15cqw;
+}
+.sig-thumb-garden .thumb-date {
+  font-size: 3cqw;
+  margin-top: 9cqw;
+}
+/* Full-page, desktop preview and language accommodations. */
+.full-invitation > .signature-shell {
+  max-width: 800px;
+}
+.full-invitation .signature-shell .sig-hero {
+  min-height: 100svh;
+}
+.full-invitation .signature-shell .sig-cover-type h1 {
+  font-size: 90px;
+}
+.full-invitation .signature-shell .sig-cover-type > .sig-kicker {
+  font-size: 10px;
+}
+.full-invitation .signature-shell .sig-cover-type > p {
+  font-size: 12px;
+}
+.full-invitation .signature-shell .sig-cover-type > small {
+  font-size: 9px;
+}
+.full-invitation .signature-shell .sig-open-button {
+  font-size: 11px;
+  padding: 16px 24px;
+}
+.full-invitation .signature-shell .sig-open-button.pearl-seal {
+  width: 105px;
+  height: 105px;
+  padding: 0;
+}
+.full-invitation .signature-shell .pearl-monogram {
+  font-size: 35px;
+}
+.full-invitation .signature-shell .sig-panel {
+  padding: 95px 65px;
+}
+.full-invitation .signature-shell .sig-panel > p {
+  font-size: 19px;
+}
+.full-invitation .signature-shell .sig-kicker {
+  font-size: 9px;
+}
+.full-invitation .signature-shell .sig-cover-roadtrip .sig-cover-type {
+  padding-top: 57%;
+}
+.full-invitation .signature-shell .sig-cover-roadtrip .satin-bow {
+  width: 70%;
+  left: 15%;
+  top: 20%;
+}
+.full-invitation .signature-shell .sig-cover-roadtrip .ribbon-band {
+  top: 37%;
+  height: 32px;
+}
+.full-invitation .signature-shell .sig-cover-lace .sig-cover-type {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+.full-invitation .signature-shell .lace-flap {
+  height: 58%;
+}
+.full-invitation .signature-shell .lotus-folio {
+  padding-top: 230px;
+}
+.full-invitation .signature-shell .folio-crown {
+  top: -48%;
+}
+.full-invitation .signature-shell .lotus-family-layout {
+  max-width: 580px;
+  margin-top: 45px;
+}
+.full-invitation .signature-shell .lotus-family-layout p {
+  font-size: 18px;
+}
+.full-invitation .signature-shell .lotus-family-layout span {
+  font-size: 7px;
+}
+.full-invitation .signature-shell .lotus-couple {
+  max-height: 420px;
+  max-width: 520px;
+}
+.full-invitation .signature-shell .sig-date-line {
+  font-size: 13px !important;
+}
+.full-invitation .signature-shell .sig-date-line > span {
+  font-size: 12px;
+}
+.full-invitation .signature-shell .palace-arrival {
+  padding-top: 130px;
+}
+.full-invitation .signature-shell .palace-arrival > .palace-illustration {
+  width: 90%;
+  max-width: 600px;
+}
+.full-invitation .signature-shell .palace-tuskers {
+  max-width: 600px;
+  margin-top: 0;
+}
+.full-invitation .signature-shell .flight-arrival {
+  padding: 60px 60px 55px;
+}
+.full-invitation .signature-shell .flight-hero-title {
+  padding-top: 350px;
+}
+.full-invitation .signature-shell .flight-hero-title .sig-names {
+  font-size: 45px;
+}
+.full-invitation .signature-shell .arrival-plane {
+  width: 180px;
+}
+.full-invitation .signature-shell .manuscript-letter {
+  padding: 70px 65px;
+}
+.full-invitation .signature-shell .manuscript-address {
+  max-width: 570px;
+}
+.full-invitation .signature-shell .manuscript-address p {
+  font-size: 22px;
+}
+.full-invitation .signature-shell .manuscript-address .sig-names {
+  font-size: 43px;
+}
+.full-invitation .signature-shell .botanical-editorial {
+  padding-top: 90px;
+}
+.full-invitation .signature-shell .portrait-oval {
+  width: 55%;
+  height: 430px;
+}
+.full-invitation .signature-shell .lace-letterhead {
+  padding: 90px 80px;
+}
+.full-invitation .signature-shell .lace-monogram {
+  width: 140px;
+  height: 140px;
+  font-size: 54px;
+}
+.full-invitation .signature-shell .lace-letterhead > p {
+  font-size: 22px;
+}
+.full-invitation .signature-shell .lace-letter-small {
+  font-size: 9px !important;
+}
+.full-invitation .signature-shell .lace-date {
+  max-width: 480px;
+}
+.full-invitation .signature-shell .lace-date strong {
+  font-size: 84px;
+}
+.full-invitation .signature-shell .lace-date span {
+  font-size: 12px;
+}
+.full-invitation .signature-shell .roadtrip-arrival {
+  padding: 65px 55px 50px;
+}
+.full-invitation .signature-shell .roadtrip-title {
+  padding-bottom: 300px;
+}
+.full-invitation .signature-shell .roadtrip-title .sig-names {
+  font-size: 45px;
+}
+.full-invitation .signature-shell .arrival-car {
+  width: 170px;
+  left: calc(50% - 85px);
+  bottom: 15%;
+}
+.full-invitation .signature-shell .roadtrip-destination {
+  padding: 20px;
+  font-size: 8px;
+}
+.full-invitation .signature-shell .roadtrip-destination strong {
+  font-size: 27px;
+}
+.full-invitation .signature-shell .secret-garden {
+  padding: 100px 95px 60px;
+}
+.full-invitation .signature-shell .garden-name-plaque .sig-names {
+  font-size: 45px;
+}
+.full-invitation .signature-shell .garden-name-plaque > p {
+  font-size: 18px;
+}
+.full-invitation .signature-shell .botanical-story {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.full-invitation .signature-shell .pressed-flower-photo {
+  width: 90%;
+}
+.full-invitation .signature-shell .botanical-story h2 {
+  font-size: 52px;
+}
+.signature-shell[lang="si"] .sig-kicker,
+.signature-shell[lang="ta"] .sig-kicker {
+  letter-spacing: 0.01em;
+  font-size: 10px;
+  line-height: 2;
+}
+.signature-shell[lang="si"] .sig-reply h2,
+.signature-shell[lang="ta"] .sig-reply h2 {
+  font-family: var(--sans);
+  font-size: clamp(24px, 7cqw, 42px);
+  line-height: 1.6;
+}
+@keyframes signature-page-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes lotus-unfold {
+  to {
+    transform: rotate(45deg) scale(2);
+    opacity: 0;
+  }
+}
+@keyframes peacock-open {
+  to {
+    transform: rotate(12deg) scale(1.8);
+    opacity: 0;
+  }
+}
+@keyframes lantern-flicker {
+  0%,
+  100% {
+    opacity: 0.6;
+    filter: brightness(0.85);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+}
+@keyframes night-parade {
+  from {
+    transform: translateX(-12%);
+  }
+  to {
+    transform: translateX(4%);
+  }
+}
+@keyframes airplane-glide {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-15deg);
+  }
+  50% {
+    transform: translate(12px, -22px) rotate(-18deg);
+  }
+}
+@keyframes car-idle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(1deg);
+  }
+}
+@media (max-width: 600px) {
+  .full-invitation .signature-shell .sig-cover {
+    min-height: 100svh;
+    height: auto;
+  }
+  .full-invitation .signature-shell .sig-cover-type h1 {
+    font-size: 58px;
+  }
+  .full-invitation .signature-shell .sig-cover-type > .sig-kicker {
+    font-size: 7px;
+  }
+  .full-invitation .signature-shell .sig-cover-type > p {
+    font-size: 9px;
+  }
+  .full-invitation .signature-shell .sig-open-button {
+    font-size: 9px;
+    padding: 13px 18px;
+  }
+  .full-invitation .signature-shell .sig-cover-type > small {
+    font-size: 7px;
+  }
+  .full-invitation .signature-shell .sig-panel {
+    padding: 65px 29px;
+  }
+  .full-invitation .signature-shell .sig-panel > p {
+    font-size: 15px;
+  }
+  .full-invitation .signature-shell .sig-kicker {
+    font-size: 7px;
+  }
+  .full-invitation .signature-shell .sig-cover-lace {
+    height: 100svh;
+    min-height: 700px;
+    padding-top: 100px;
+  }
+  .full-invitation .signature-shell .sig-cover-lace .sig-cover-type {
+    height: 100%;
+    padding-bottom: 40px;
+  }
+  .full-invitation .signature-shell .sig-open-button.pearl-seal {
+    width: 80px;
+    height: 80px;
+    top: 43%;
+  }
+  .full-invitation .signature-shell .pearl-monogram {
+    font-size: 28px;
+  }
+  .full-invitation .signature-shell .sig-cover-roadtrip {
+    height: 100svh;
+    min-height: 700px;
+    padding: 90px 30px 80px;
+  }
+  .full-invitation .signature-shell .sig-cover-roadtrip .sig-cover-type {
+    padding-top: 90%;
+    height: 100%;
+    padding-bottom: 0;
+  }
+  .full-invitation .signature-shell .sig-cover-roadtrip .sig-cover-type h1 {
+    font-size: 42px;
+  }
+  .full-invitation .signature-shell .sig-cover-roadtrip .satin-bow {
+    width: 90%;
+    left: 5%;
+    top: 23%;
+  }
+  .full-invitation .signature-shell .sig-cover-roadtrip .ribbon-band {
+    top: 35%;
+    height: 20px;
+  }
+  .full-invitation .signature-shell .sig-cover-manuscript {
+    height: 100svh;
+    min-height: 700px;
+  }
+  .full-invitation .signature-shell .sig-cover-flight {
+    height: 100svh;
+    min-height: 700px;
+  }
+  .full-invitation .signature-shell .sig-cover-garden {
+    height: 100svh;
+    min-height: 700px;
+  }
+  .full-invitation .signature-shell .lotus-folio {
+    padding-top: 170px;
+  }
+  .full-invitation .signature-shell .folio-crown {
+    top: -27%;
+    width: 120%;
+    left: -10%;
+  }
+  .full-invitation .signature-shell .lotus-family-layout {
+    gap: 14px;
+    margin-top: 30px;
+  }
+  .full-invitation .signature-shell .lotus-family-layout p {
+    font-size: 12px;
+  }
+  .full-invitation .signature-shell .lotus-family-layout span {
+    font-size: 5px;
+  }
+  .full-invitation .signature-shell .lotus-couple {
+    max-height: 290px;
+  }
+  .full-invitation .signature-shell .sig-date-line {
+    font-size: 9px !important;
+  }
+  .full-invitation .signature-shell .sig-date-line > span {
+    font-size: 8px;
+  }
+  .full-invitation .signature-shell .palace-arrival {
+    padding: 110px 30px 40px;
+  }
+  .full-invitation .signature-shell .palace-arrival > .palace-illustration {
+    width: 115%;
+  }
+  .full-invitation .signature-shell .flight-arrival {
+    padding: 65px 30px 40px;
+  }
+  .full-invitation .signature-shell .flight-hero-title {
+    padding-top: 300px;
+  }
+  .full-invitation .signature-shell .flight-hero-title h2 {
+    font-size: 68px;
+  }
+  .full-invitation .signature-shell .flight-hero-title .sig-names {
+    font-size: 31px;
+  }
+  .full-invitation .signature-shell .arrival-plane {
+    width: 110px;
+  }
+  .full-invitation .signature-shell .manuscript-letter {
+    padding: 75px 32px 45px;
+  }
+  .full-invitation .signature-shell .manuscript-address p {
+    font-size: 17px;
+  }
+  .full-invitation .signature-shell .manuscript-address .sig-names {
+    font-size: 31px;
+  }
+  .full-invitation .signature-shell .botanical-editorial {
+    padding: 80px 30px 45px;
+  }
+  .full-invitation .signature-shell .portrait-oval {
+    width: 76%;
+    height: 330px;
+  }
+  .full-invitation .signature-shell .lace-letterhead {
+    padding: 90px 42px 55px;
+  }
+  .full-invitation .signature-shell .lace-monogram {
+    width: 110px;
+    height: 110px;
+    font-size: 42px;
+  }
+  .full-invitation .signature-shell .lace-letterhead > p {
+    font-size: 17px;
+  }
+  .full-invitation .signature-shell .lace-letter-small {
+    font-size: 7px !important;
+  }
+  .full-invitation .signature-shell .lace-date strong {
+    font-size: 64px;
+  }
+  .full-invitation .signature-shell .lace-date span {
+    font-size: 10px;
+  }
+  .full-invitation .signature-shell .roadtrip-arrival {
+    padding: 70px 30px 35px;
+    min-height: 900px;
+  }
+  .full-invitation .signature-shell .roadtrip-title {
+    padding-bottom: 260px;
+  }
+  .full-invitation .signature-shell .roadtrip-title h2 {
+    font-size: 56px;
+  }
+  .full-invitation .signature-shell .roadtrip-title .sig-names {
+    font-size: 31px;
+  }
+  .full-invitation .signature-shell .arrival-car {
+    width: 130px;
+    left: calc(50% - 65px);
+  }
+  .full-invitation .signature-shell .roadtrip-destination {
+    padding: 15px;
+    font-size: 6px;
+  }
+  .full-invitation .signature-shell .roadtrip-destination strong {
+    font-size: 21px;
+  }
+  .full-invitation .signature-shell .secret-garden {
+    padding: 110px 40px 60px;
+  }
+  .full-invitation .signature-shell .garden-name-plaque .sig-names {
+    font-size: 32px;
+  }
+  .full-invitation .signature-shell .garden-name-plaque > p {
+    font-size: 14px;
+  }
+  .full-invitation .signature-shell .botanical-story {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .full-invitation .signature-shell .pressed-flower-photo {
+    width: 75%;
+  }
+  .full-invitation .signature-shell .botanical-story h2 {
+    font-size: 44px;
+  }
+  .signature-nav {
+    gap: 16px;
+    padding: 13px 15px;
+  }
+  .sig-cover-type h1 {
+    font-size: clamp(43px, 16cqw, 67px);
+  }
+  .postcard-back {
+    padding: 19px 15px;
+  }
+  .postcard-back > p {
+    font-size: 11px;
+  }
+  .postcard-back > strong {
+    font-size: 13px;
+  }
+  .postcard-front strong {
+    font-size: 24px;
+  }
+  .events-palace .signature-event-layout {
+    gap: 12px;
+  }
+  .events-palace h3 {
+    font-size: 23px;
+  }
+  .passport-spread {
+    gap: 13px;
+    padding: 20px 15px;
+  }
+  .passport-spread dd {
+    font-size: 12px;
+  }
+  .signature-shell .signature-gallery h2 {
+    font-size: 35px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signature-shell *,
+  .signature-card * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  .sig-cover.opening .sig-cover-type {
+    transform: none;
+  }
+  .signature-shell .signature-document {
+    animation: none !important;
+  }
+}
+
+.uploaded-invitation{display:block;width:100%;height:100%;min-height:0;flex:1;border:0;background:#fffdf7}.full-invitation>.uploaded-invitation{height:100dvh;min-height:100dvh;max-width:620px;margin:auto}.uploaded-card{position:relative;overflow:hidden;background:#fffdf7}.uploaded-card>img{width:100%;height:68%;object-fit:cover;object-position:center}.uploaded-card>div{padding:12px 8px;text-align:center;color:#7a0c1e;display:flex;flex-direction:column;gap:9px}.uploaded-card span{font-size:8px;letter-spacing:2px}.uploaded-card strong{font-family:var(--font-serif),Georgia,serif;font-size:27px;font-weight:500}.uploaded-card i{color:#b8860b}

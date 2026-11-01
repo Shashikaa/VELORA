@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><link href="utilities.css" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELORA — Kandyan Vintage Ride Animated Wedding Invitation Template</title>
+<style>
+    :root {
+      --paper-bg: #FFFDF7;
+      --card-bg: #F9F3E6;
+      --primary-ink: #7A0C1E;
+      --accent-gold: #D4AF37;
+      --seal-hex: #B8860B;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0E0B09;
+      color: #F5EFE6;
+      overflow-x: hidden;
+    }
+
+    .font-royal {
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .font-serif-luxury {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .font-script {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    /* Subtle paper grain pattern */
+    .ivory-paper {
+      background-color: var(--paper-bg);
+      background-image: 
+        radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.10) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(122, 12, 30, 0.05) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.02) 0px, rgba(212, 175, 55, 0.02) 2px, transparent 2px, transparent 6px);
+      color: var(--primary-ink);
+    }
+
+    /* Custom Scrollbar inside phone simulator */
+    .phone-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .phone-scroll::-webkit-scrollbar-track {
+      background: rgba(212, 175, 55, 0.08);
+    }
+    .phone-scroll::-webkit-scrollbar-thumb {
+      background: rgba(122, 12, 30, 0.35);
+      border-radius: 9999px;
+    }
+
+    /* Continuous Kandyan Perahera Procession Marquee */
+    @keyframes peraheraMarch {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .perahera-track {
+      display: flex;
+      width: 200%;
+      animation: peraheraMarch 22s linear infinite;
+    }
+
+    .perahera-track.paused {
+      animation-play-state: paused;
+    }
+
+    /* Dancer & Drummer rhythmic bounce */
+    @keyframes dancerStep {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-4px) rotate(-2deg);
+      }
+      75% {
+        transform: translateY(-3px) rotate(2deg);
+      }
+    }
+
+    .animate-dancer {
+      animation: dancerStep 1.1s ease-in-out infinite;
+    }
+
+    .animate-dancer-delayed {
+      animation: dancerStep 1.1s ease-in-out 0.55s infinite;
+    }
+
+    /* Royal Elephant gentle walk */
+    @keyframes elephantWalk {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-3px) rotate(0.8deg);
+      }
+    }
+
+    .animate-elephant {
+      animation: elephantWalk 1.6s ease-in-out infinite;
+    }
+
+    /* Scroll Down Prompt Bounce */
+    @keyframes scrollPulse {
+      0%, 100% {
+        transform: translateY(0);
+        opacity: 0.95;
+      }
+      50% {
+        transform: translateY(6px);
+        opacity: 0.6;
+      }
+    }
+
+    .animate-scroll-prompt {
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+
+    /* Floating Music Disc Spin */
+    @keyframes slowSpin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spin-disc {
+      animation: slowSpin 7s linear infinite;
+    }
+
+    /* Curtain Opening Transition */
+    .curtain-panel {
+      transition: transform 0.95s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.85s ease;
+    }
+    .curtain-open-left {
+      transform: translateX(-105%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .curtain-open-right {
+      transform: translateX(105%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Gold shimmer border */
+    .gold-border-glow {
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 12px 32px -8px rgba(122, 12, 30, 0.18);
+    }
+  </style>
+<style>@import url('/fonts.css');
+html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:'DM Sans',sans-serif}body>header,body>main{display:none!important}#invitationViewport{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;border-radius:0!important;border:0!important}.font-royal,.font-serif-luxury{font-family:'Cormorant Garamond',Georgia,serif}.font-script{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic}#toastBanner{left:12px;right:12px;bottom:76px}#secHome h2{overflow-wrap:anywhere}.velora-local-note{font-size:11px;color:#7a0c1e;line-height:1.6;margin-bottom:14px}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head>
+<body class="min-h-screen flex flex-col selection:bg-amber-500 selection:text-black">
+<!-- Top Studio Header Bar -->
+<header class="sticky top-0 z-40 border-b border-white/10 bg-[#13100E]/95 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 flex items-center justify-center text-black font-royal font-bold text-lg shadow-lg shadow-amber-500/20">
+          V
+        </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-royal text-amber-300 font-bold tracking-wider text-base sm:text-lg">VELORA</span>
+<span class="text-[11px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 font-semibold">
+              New Animated Card Template
+            </span>
+</div>
+<p class="text-xs text-stone-400">
+            Kandyan Vintage Ride &amp; Royal Perahera Edition • Inspired by Invitation.LK Reel
+          </p>
+</div>
+</div>
+<!-- Studio Mode Switcher Tabs -->
+<div class="flex items-center gap-1.5 bg-black/50 p-1 rounded-2xl border border-white/10">
+<button class="px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-gradient-to-r from-amber-500 to-amber-600 text-black shadow" id="tabBtnPreview" onclick="switchStudioTab('preview')">
+          📱 Live Reel Invitation
+        </button>
+<button class="px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all text-stone-300 hover:text-white" id="tabBtnCustomize" onclick="switchStudioTab('customize')">
+          ✨ Customize Details
+        </button>
+<button class="px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all text-stone-300 hover:text-white" id="tabBtnCode" onclick="switchStudioTab('code')">
+          💻 Next.js VELORA Code
+        </button>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-xl bg-rose-900/60 hover:bg-rose-800 text-amber-200 border border-amber-400/30 text-xs font-semibold flex items-center gap-1.5 transition-all" id="btnRecordVideo" onclick="recordHeroVideoClip()">
+<span>🎬</span>
+<span id="recordBtnLabel">Export Animated Video</span>
+</button>
+<button class="px-3 py-1.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 border border-white/10 text-xs font-medium transition-all" id="btnResetEnvelope" onclick="reopenEnvelopeCurtain()">
+          Replay Curtain Reveal
+        </button>
+</div>
+</div>
+</header>
+<!-- Main Workspace Container -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6">
+<!-- ==================== TAB 1 & 2: PREVIEW + SIDEBAR ==================== -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" id="studioMainGrid">
+<!-- Left Column: VELORA Template Card + Quick Info / Live Customizer (5 cols on lg) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- VELORA Repository TemplateCard.tsx Preview -->
+<div class="space-y-3" id="veloraCardPreviewPanel">
+<div class="flex items-center justify-between">
+<h2 class="text-xs font-semibold uppercase tracking-widest text-amber-400/90 flex items-center gap-2">
+<span>1. VELORA Catalog Card (`TemplateCard.tsx`)</span>
+</h2>
+<span class="text-[11px] text-stone-400">Matches `src/components/templates/TemplateCard.tsx`</span>
+</div>
+<!-- Exact VELORA TemplateCard Structure -->
+<div class="group rounded-3xl border border-white/10 hover:border-amber-400/50 bg-[#13100E] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10 hover:-translate-y-1">
+<div>
+<!-- Card Header & Thumbnail -->
+<div class="relative h-52 overflow-hidden">
+<img alt="Kandyan VintageSunset Ride" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" id="catalogCardThumb" src="/images/kandyan-ride-0.webp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#13100E] via-transparent to-transparent opacity-85"></div>
+<!-- Live Animated Badge -->
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-rose-950/80 text-amber-300 border border-amber-400/40 backdrop-blur-md flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+<span>Animated Video + Perahera</span>
+</div>
+<!-- Favorite Heart Button -->
+<button aria-label="Favorite Template" class="absolute top-3 right-3 p-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white hover:text-rose-500 transition-colors" id="btnCatalogFav" onclick="toggleCatalogFavorite()">
+<svg class="w-4 h-4 fill-rose-500 text-rose-500" id="catalogFavIcon" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div class="absolute bottom-3 left-3 flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-md">
+                    Traditional
+                  </span>
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-white/10 text-stone-300 border border-white/10 backdrop-blur-md">
+                    curtain opening
+                  </span>
+<span class="px-2.5 py-1 rounded-full text-xs font-medium bg-rose-500/20 text-rose-200 border border-rose-400/30 backdrop-blur-md">
+                    Royal Tier
+                  </span>
+</div>
+</div>
+<!-- Card Body -->
+<div class="p-5">
+<div class="flex items-center justify-between mb-1">
+<h3 class="text-xl font-serif-luxury text-amber-100 font-semibold group-hover:text-amber-400 transition-colors" id="catalogTitle">
+                    Kandyan Vintage Sunset &amp; Perahera
+                  </h3>
+<span class="text-xs font-medium text-amber-400/90 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20" id="catalogCoupleBadge">
+                    Kavindi &amp; Dulan
+                  </span>
+</div>
+<p class="text-xs text-stone-400 mb-4 line-clamp-1" id="catalogSubtitle">
+                  Animated sunset classic car hero, falling petals &amp; moving Kandyan Perahera procession
+                </p>
+<div class="space-y-2 mb-4 text-xs text-stone-300">
+<div class="flex items-center gap-2">
+<span class="text-amber-400">🕒</span>
+<span class="truncate" id="catalogTime">09:38 AM (Poruwa Nekatha) • 20th February 2027</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-amber-400">📍</span>
+<span class="truncate" id="catalogVenue">The Grand Ballroom, Cinnamon Citadel, Kandy</span>
+</div>
+</div>
+<!-- Card Footer Actions -->
+<div class="flex items-center justify-between pt-4 border-t border-white/10">
+<div>
+<div class="text-[10px] text-stone-400 uppercase tracking-wider">Starting from</div>
+<div class="text-lg font-bold text-amber-400" id="catalogPrice">LKR 8,500</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 transition-colors text-xs font-medium flex items-center gap-1.5" id="btnFocusSimulator" onclick="scrollToPhoneSimulator()" title="Preview Card">
+<span>📱</span>
+<span>Live Preview</span>
+</button>
+<button class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-semibold text-xs transition-all shadow-md hover:shadow-amber-500/20" id="btnOpenCustomizerFromCard" onclick="switchStudioTab('customize')">
+                      Customize
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Animation Controls & Reel Feature Breakdown -->
+<div class="rounded-3xl border border-white/10 bg-[#13100E] p-5 space-y-4" id="animationControlsBox">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-semibold text-amber-300 flex items-center gap-2">
+<span>✨</span>
+<span>Live Reel Animation Engine Controls</span>
+</h3>
+<span class="text-[11px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
+              60 FPS Canvas Active
+            </span>
+</div>
+<div class="grid grid-cols-2 gap-2.5 text-xs">
+<button class="p-3 rounded-2xl border border-amber-500/30 bg-amber-500/10 text-amber-200 font-medium flex items-center justify-between transition-all" id="togglePetalsBtn" onclick="togglePetalShower()">
+<span>🌸 Falling Petals</span>
+<span class="px-2 py-0.5 rounded bg-amber-400 text-black font-bold text-[10px]" id="petalStateBadge">ON</span>
+</button>
+<button class="p-3 rounded-2xl border border-amber-500/30 bg-amber-500/10 text-amber-200 font-medium flex items-center justify-between transition-all" id="toggleCarMotionBtn" onclick="toggleCarMotion()">
+<span>🚗 Vintage Ride Motion</span>
+<span class="px-2 py-0.5 rounded bg-amber-400 text-black font-bold text-[10px]" id="carMotionBadge">ON</span>
+</button>
+<button class="p-3 rounded-2xl border border-amber-500/30 bg-amber-500/10 text-amber-200 font-medium flex items-center justify-between transition-all" id="togglePeraheraBtn" onclick="togglePeraheraMotion()">
+<span>🐘 Perahera March</span>
+<span class="px-2 py-0.5 rounded bg-amber-400 text-black font-bold text-[10px]" id="peraheraStateBadge">ON</span>
+</button>
+<button class="p-3 rounded-2xl border border-white/10 bg-stone-900 hover:bg-stone-800 text-stone-200 font-medium flex items-center justify-between transition-all" id="toggleMusicSidebarBtn" onclick="toggleWeddingAudio()">
+<span>🎵 Kandyan Melody</span>
+<span class="px-2 py-0.5 rounded bg-stone-700 text-stone-300 font-bold text-[10px]" id="musicStateBadge">OFF</span>
+</button>
+</div>
+<!-- Petal Density Slider -->
+<div class="pt-1 space-y-1.5">
+<div class="flex justify-between text-xs text-stone-300">
+<label for="petalDensityInput">Rose &amp; Jasmine Petal Count</label>
+<span class="text-amber-400 font-semibold" id="petalCountLabel">42 Petals</span>
+</div>
+<input class="w-full accent-amber-500 cursor-pointer" id="petalDensityInput" max="90" min="10" oninput="updatePetalCount(this.value)" type="range" value="42"/>
+</div>
+</div>
+<!-- Live Details Customizer Form (Shown when Customize Tab is clicked or inline) -->
+<div class="rounded-3xl border border-amber-500/30 bg-[#13100E] p-5 space-y-4" id="customizerFormBox">
+<div class="flex items-center justify-between border-b border-white/10 pb-3">
+<div>
+<h3 class="text-sm font-semibold text-amber-300">Customize Card Template Details</h3>
+<p class="text-[11px] text-stone-400">Edits update the phone preview &amp; Next.js export code immediately</p>
+</div>
+<button class="text-[11px] text-amber-400 hover:underline" id="btnResetDefaults" onclick="resetTemplateDefaults()">
+              Reset Defaults
+            </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="sm:col-span-2">
+<label class="block text-stone-400 mb-1" for="inputBlessing">Top Blessing Heading</label>
+<input class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-amber-100 focus:border-amber-400 focus:outline-none" id="inputBlessing" oninput="syncCustomDetails()" type="text" value="SRI SUBA MANGALAM!"/>
+</div>
+<div class="sm:col-span-2">
+<label class="block text-stone-400 mb-1" for="inputCouple">Couple Names</label>
+<input class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-amber-100 focus:border-amber-400 focus:outline-none font-semibold" id="inputCouple" oninput="syncCustomDetails()" type="text" value="Kavindi &amp; Dulan"/>
+</div>
+<div>
+<label class="block text-stone-400 mb-1" for="inputBrideParents">Bride's Parents</label>
+<input class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-stone-200 focus:border-amber-400 focus:outline-none" id="inputBrideParents" oninput="syncCustomDetails()" type="text" value="Mr. &amp; Mrs. H. M. Wickramasinghe"/>
+</div>
+<div>
+<label class="block text-stone-400 mb-1" for="inputGroomParents">Groom's Parents</label>
+<input class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-stone-200 focus:border-amber-400 focus:outline-none" id="inputGroomParents" oninput="syncCustomDetails()" type="text" value="Mr. &amp; Mrs. D. S. Senanayake"/>
+</div>
+<div>
+<label class="block text-stone-400 mb-1" for="inputDisplayDate">Display Date</label>
+<input class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-stone-200 focus:border-amber-400 focus:outline-none" id="inputDisplayDate" oninput="syncCustomDetails()" type="text" value="Saturday, 20th February 2027"/>
+</div>
+<div>
+<label class="block text-stone-400 mb-1" for="inputAuspiciousTime">Auspicious Time (Nekatha)</label>
+<input class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-stone-200 focus:border-amber-400 focus:outline-none" id="inputAuspiciousTime" oninput="syncCustomDetails()" type="text" value="09:38 AM (Poruwa Nekatha)"/>
+</div>
+<div class="sm:col-span-2">
+<label class="block text-stone-400 mb-1" for="inputVenue">Venue Name &amp; City</label>
+<input class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-stone-200 focus:border-amber-400 focus:outline-none" id="inputVenue" oninput="syncCustomDetails()" type="text" value="The Grand Ballroom, Cinnamon Citadel, Kandy"/>
+</div>
+<div>
+<label class="block text-stone-400 mb-1" for="inputPriceLkr">Template Price (LKR)</label>
+<input class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-stone-200 focus:border-amber-400 focus:outline-none" id="inputPriceLkr" oninput="syncCustomDetails()" type="number" value="8500"/>
+</div>
+<div>
+<label class="block text-stone-400 mb-1" for="inputThemePreset">Color Palette Preset</label>
+<select class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-stone-200 focus:border-amber-400 focus:outline-none" id="inputThemePreset" onchange="applyPalettePreset(this.value)">
+<option value="kandyan-maroon">Kandyan Ivory &amp; Royal Maroon (Reel)</option>
+<option value="ceylon-emerald">Ceylon Ivory &amp; Emerald Gold</option>
+<option value="royal-midnight">Midnight Velvet &amp; Champagne Gold</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Mobile Phone Reel Invitation Simulator (7 cols on lg) -->
+<div class="lg:col-span-7 flex flex-col items-center" id="phoneSimulatorSection">
+<div class="w-full max-w-[430px] flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+<span class="text-xs font-semibold uppercase tracking-wider text-amber-200">
+              Interactive Smartphone Simulator
+            </span>
+</div>
+<span class="text-[11px] text-stone-400">Scroll inside phone or tap nav icons</span>
+</div>
+<!-- Phone Outer Bezel -->
+<div class="relative w-full max-w-[420px] h-[820px] rounded-[46px] p-3 bg-gradient-to-b from-stone-700 via-stone-900 to-black shadow-[0_25px_70px_rgba(0,0,0,0.85)] border border-white/15">
+<!-- Dynamic Island / Speaker Notch -->
+<div class="absolute top-5 left-1/2 -translate-x-1/2 z-30 w-28 h-5 bg-black rounded-full flex items-center justify-center gap-2 border border-white/10">
+<span class="w-2 h-2 rounded-full bg-stone-800"></span>
+<span class="w-8 h-1 rounded-full bg-stone-800"></span>
+</div>
+<!-- Inner Phone Screen Viewport -->
+</div>
+</div>
+</div>
+<!-- ==================== TAB 3: NEXT.JS VELORA REPOSITORY CODE VIEW ==================== -->
+<div class="hidden space-y-6" id="studioCodeSection">
+<div class="rounded-3xl border border-amber-500/30 bg-[#13100E] p-6">
+<div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+<div>
+<span class="text-xs font-semibold uppercase tracking-widest text-amber-400">Direct Integration for `Shashikaa/VELORA`</span>
+<h2 class="text-xl font-serif-luxury text-white font-bold mt-0.5">
+              1. Add Template Object to `src/data/templates.ts`
+            </h2>
+<p class="text-xs text-stone-400">
+              Conforms strictly to your `WeddingTemplate` TypeScript interface in `src/data/templates.ts`.
+            </p>
+</div>
+<button class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs transition-all" id="btnCopyTemplateTs" onclick="copyCodeBlock('codeBlockTemplatesTs', 'btnCopyTemplateTs')">
+            📋 Copy `templates.ts` Entry
+          </button>
+</div>
+<pre class="p-4 rounded-2xl bg-black/80 border border-white/10 text-amber-200 text-xs overflow-x-auto leading-relaxed font-mono" id="codeBlockTemplatesTs"></pre>
+</div>
+<div class="rounded-3xl border border-white/10 bg-[#13100E] p-6">
+<div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+<div>
+<span class="text-xs font-semibold uppercase tracking-widest text-amber-400">Animated Reel Component</span>
+<h2 class="text-xl font-serif-luxury text-white font-bold mt-0.5">
+              2. React Simulator Component (`src/components/simulator/KandyanVintageRideCard.tsx`)
+            </h2>
+<p class="text-xs text-stone-400">
+              Drop-in Next.js client component with the falling petals canvas, Perahera marquee, countdown, and timeline.
+            </p>
+</div>
+<button class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs transition-all" id="btnCopyComponentTsx" onclick="copyCodeBlock('codeBlockComponentTsx', 'btnCopyComponentTsx')">
+            📋 Copy React Component
+          </button>
+</div>
+<pre class="p-4 rounded-2xl bg-black/80 border border-white/10 text-emerald-200 text-xs overflow-x-auto leading-relaxed font-mono" id="codeBlockComponentTsx"></pre>
+</div>
+</div>
+</main>
+<!-- Gallery Lightbox Modal -->
+<div class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4" id="galleryModal">
+<div class="relative max-w-lg w-full rounded-3xl overflow-hidden border border-[#D4AF37] bg-[#13100E] p-3">
+<div class="flex items-center justify-between px-2 pb-2">
+<span class="text-xs font-semibold text-amber-300" id="lightboxCaption">Captured Moment</span>
+<button class="px-2.5 py-1 rounded-lg bg-white/10 text-white text-xs hover:bg-white/20" id="btnCloseLightbox" onclick="closeGalleryLightbox()">
+          ✕ Close
+        </button>
+</div>
+<img alt="Gallery Preview" class="w-full h-auto rounded-2xl object-cover" id="lightboxImg" src="/images/kandyan-ride-0.webp"/>
+</div>
+</div>
+<!-- Toast Notification Banner -->
+<div class="fixed bottom-5 right-5 z-50 hidden px-4 py-3 rounded-2xl bg-amber-500 text-black font-semibold text-xs shadow-2xl border border-white/20" id="toastBanner">
+    Action completed!
+  </div>
+<div class="relative w-full h-full rounded-[36px] overflow-hidden ivory-paper flex flex-col border border-[#D4AF37]/40" id="invitationViewport">
+<!-- ========== ROYAL CURTAIN OPENING OVERLAY ========== -->
+<div class="absolute inset-0 z-30 flex pointer-events-auto" id="curtainOverlay">
+<!-- Left Curtain Half -->
+<div class="curtain-panel w-1/2 h-full bg-gradient-to-br from-[#610816] via-[#4A0510] to-[#2B0208] border-r border-[#D4AF37]/60 flex flex-col justify-between p-4 relative overflow-hidden" id="curtainLeft">
+<div class="opacity-20 text-[#D4AF37] text-6xl font-royal select-none">☸</div>
+<div class="text-right pr-2">
+<div class="text-[10px] uppercase tracking-[0.25em] text-[#D4AF37]/80">Ceylon Vows</div>
+</div>
+</div>
+<!-- Right Curtain Half -->
+<div class="curtain-panel w-1/2 h-full bg-gradient-to-bl from-[#610816] via-[#4A0510] to-[#2B0208] border-l border-[#D4AF37]/60 flex flex-col justify-between p-4 relative overflow-hidden" id="curtainRight">
+<div class="opacity-20 text-[#D4AF37] text-6xl font-royal text-right select-none">☸</div>
+<div class="pl-2">
+<div class="text-[10px] uppercase tracking-[0.25em] text-[#D4AF37]/80">Kandyan Royal</div>
+</div>
+</div>
+<!-- Center Wax Seal / Open Button -->
+<div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center transition-opacity duration-500" id="curtainSealWrap">
+<div class="p-6 rounded-3xl bg-[#2B0208]/90 border-2 border-[#D4AF37] shadow-2xl max-w-[280px] backdrop-blur-md">
+<p class="text-[10px] uppercase tracking-[0.25em] text-[#D4AF37] mb-2">Sri Suba Mangalam</p>
+<h4 class="font-script text-4xl text-amber-200 mb-2" id="sealCoupleText">Kavindi &amp; Dulan</h4>
+<p class="text-xs text-amber-100/80 font-serif-luxury italic mb-5">
+                    Cordially invite you to celebrate their sacred Kandyan wedding union
+                  </p>
+<button class="w-full py-3 px-5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C59B27] text-[#4A0510] font-bold text-xs uppercase tracking-widest shadow-lg hover:scale-105 transition-transform" id="btnOpenInvitation" onclick="openInvitationCurtain()">
+                    ✨ Tap to Open Invitation
+                  </button>
+</div>
+</div>
+</div>
+<!-- ========== FLOATING TOP-RIGHT AUDIO CONTROL (AS IN REEL) ========== -->
+<button class="absolute top-10 right-4 z-20 w-10 h-10 rounded-full bg-[#7A0C1E]/90 text-[#FFFDF7] border-2 border-[#D4AF37] shadow-lg flex items-center justify-center hover:scale-105 transition-transform" id="btnFloatingAudio" onclick="toggleWeddingAudio()" title="Toggle Traditional Wedding Music">
+<span class="text-sm" id="floatingMusicIcon">🔇</span>
+</button>
+<!-- ========== SCROLLABLE INVITATION CARD BODY ========== -->
+<div class="phone-scroll flex-1 overflow-y-auto pb-24 scroll-smooth" id="phoneScrollContainer">
+<!-- SECTION 1: ANIMATED VIDEO HERO (COUPLE IN VINTAGE CLASSIC CAR AT SUNSET + FALLING PETALS) -->
+<section class="relative" id="secHome">
+<!-- Animated HTML5 Canvas Video Wrapper -->
+<div class="relative w-full h-[330px] overflow-hidden bg-[#2A120A]">
+<!-- Source Image (hidden, drawn onto 60FPS canvas with animated sun rays, car motion & falling petals) -->
+<img alt="Sri Lankan Bride and Groom in Vintage Classic Car" class="hidden" id="heroCarSourceImg" src="/images/kandyan-ride-1.webp"/>
+<canvas class="w-full h-full object-cover block" height="330" id="heroAnimationCanvas" width="420"></canvas>
+<!-- Top Ornamental Gold Arch Overlay -->
+<div class="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/50 to-transparent pointer-events-none flex justify-center pt-2">
+<svg class="w-48 h-8 text-[#D4AF37]/90" fill="none" viewbox="0 0 200 30">
+<path d="M10 15 Q50 2 100 15 Q150 2 190 15" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+<circle cx="100" cy="15" fill="currentColor" r="4"></circle>
+<circle cx="55" cy="9" fill="currentColor" r="2.5"></circle>
+<circle cx="145" cy="9" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+<!-- Live Animated Video Indicator Pill -->
+<div class="absolute bottom-4 left-3 z-10 px-2.5 py-1 rounded-full bg-black/55 backdrop-blur-md border border-[#D4AF37]/50 text-[#FFFDF7] text-[10px] font-medium flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+<span>Animated Sunset Vintage Ride</span>
+</div>
+<!-- Soft gradient transition into the Ivory Paper Card -->
+<div class="absolute -bottom-1 inset-x-0 h-12 bg-gradient-to-t from-[#FFFDF7] via-[#FFFDF7]/80 to-transparent"></div>
+</div>
+<!-- Decorative Gold Filigree Divider -->
+<div class="px-6 pt-1 pb-6 text-center relative">
+<div class="flex items-center justify-center gap-2 text-[#D4AF37] mb-2">
+<span class="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#D4AF37]"></span>
+<span class="text-base">❖ ☸ ❖</span>
+<span class="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#D4AF37]"></span>
+</div>
+<!-- Main Blessing Title -->
+<h1 class="font-royal text-base tracking-[0.2em] font-bold text-[#7A0C1E] uppercase mb-1" id="cardBlessing">
+                    SRI SUBA MANGALAM!
+                  </h1>
+<p class="text-[10px] tracking-[0.22em] uppercase text-[#7A0C1E]/80 font-semibold mb-3">
+                    YOU ARE INVITED TO THE WEDDING OF
+                  </p>
+<!-- Couple Calligraphic Script Names -->
+<h2 class="font-script text-5xl text-[#7A0C1E] drop-shadow-sm py-1 leading-tight" id="cardCoupleNames">
+                    Kavindi &amp; Dulan
+                  </h2>
+<!-- Parents Lineage Block -->
+<div class="mt-3 space-y-1 text-xs font-serif-luxury text-[#5C0B1E]" id="uploadedFamilyBlock">
+<p>
+                      Daughter of <strong class="font-semibold" id="cardBrideParents">Mr. &amp; Mrs. H. M. Wickramasinghe</strong>
+</p>
+<p class="text-[#D4AF37] text-xs font-serif-luxury italic">&amp;</p>
+<p>
+                      Son of <strong class="font-semibold" id="cardGroomParents">Mr. &amp; Mrs. D. S. Senanayake</strong>
+</p>
+</div>
+<!-- Date & Venue Highlight Box -->
+<div class="mt-5 mx-auto max-w-[330px] p-4 rounded-2xl bg-[#F9F3E6] border border-[#D4AF37]/60 gold-border-glow">
+<div class="text-[10px] uppercase tracking-[0.2em] text-[#B8860B] font-bold mb-1">
+                      Save The Auspicious Date
+                    </div>
+<div class="font-serif-luxury text-lg font-bold text-[#7A0C1E]" id="cardDisplayDate">
+                      Saturday, 20th February 2027
+                    </div>
+<div class="text-xs text-[#7A0C1E]/90 font-medium mt-0.5" id="cardAuspiciousTime">
+                      09:38 AM (Poruwa Nekatha)
+                    </div>
+<div class="my-2.5 h-[1px] w-full bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent"></div>
+<div class="text-xs font-semibold text-[#5C0B1E]" id="cardVenue">
+                      The Grand Ballroom, Cinnamon Citadel, Kandy
+                    </div>
+</div>
+<!-- Pulsing SCROLL DOWN Prompt (As seen in Reel) -->
+<div class="mt-5 flex flex-col items-center">
+<button class="animate-scroll-prompt flex flex-col items-center group" id="btnScrollDownPrompt" onclick="scrollToCardSection('secPerahera')">
+<span class="w-7 h-10 rounded-full border-2 border-[#7A0C1E]/60 flex items-center justify-center text-[#7A0C1E] bg-[#F9F3E6] shadow-sm">
+                        ↓
+                      </span>
+<span class="mt-1.5 text-[10px] font-bold tracking-[0.25em] uppercase text-[#7A0C1E]">
+                        SCROLL DOWN
+                      </span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 2: HORIZONTALLY MOVING TRADITIONAL KANDYAN PERAHERA PROCESSION BANNER -->
+<p class="px-6 py-4 text-center text-sm font-serif-luxury" id="veloraMessage" style="color:#7a0c1e"></p><section class="py-4 bg-gradient-to-b from-[#F9F3E6] via-[#FFF8EB] to-[#F9F3E6] border-y-2 border-[#D4AF37]/60 relative overflow-hidden" id="secPerahera">
+<div class="text-center px-4 mb-2">
+<span class="text-[10px] uppercase tracking-[0.22em] text-[#B8860B] font-bold">
+                    ✦ Royal Kandyan Perahera Procession ✦
+                  </span>
+</div>
+<!-- Animated Horizontal Procession Track -->
+<div class="relative w-full overflow-hidden py-2">
+<div class="perahera-track items-end" id="peraheraTrack">
+<!-- Procession Group 1 -->
+<div class="flex items-end justify-around w-1/2 px-2 gap-3">
+<!-- 1. Seshath (Ceremonial Sun/Moon Umbrella Bearer) -->
+<div class="flex flex-col items-center animate-dancer">
+<svg class="w-12 h-20" viewbox="0 0 60 100">
+<!-- Golden Pole & Ornate Seshath Disc -->
+<line stroke="#B8860B" stroke-width="2.5" x1="44" x2="44" y1="12" y2="92"></line>
+<circle cx="44" cy="18" fill="#7A0C1E" r="13" stroke="#D4AF37" stroke-width="2.5"></circle>
+<circle cx="44" cy="18" fill="#D4AF37" r="6"></circle>
+<!-- Bearer Figure -->
+<circle cx="24" cy="48" fill="#B87A52" r="6"></circle>
+<path d="M16 44 Q24 38 32 44" fill="#FFFDF7" stroke="#D4AF37" stroke-width="1.5"></path>
+<rect fill="#7A0C1E" height="18" rx="3" width="14" x="17" y="55"></rect>
+<path d="M16 73 L14 92 L23 92 L24 78 L25 92 L34 92 L32 73 Z" fill="#FFFDF7" stroke="#7A0C1E" stroke-width="1"></path>
+<line stroke="#B87A52" stroke-linecap="round" stroke-width="3" x1="30" x2="44" y1="60" y2="54"></line>
+</svg>
+<span class="text-[9px] font-bold text-[#7A0C1E]/80 uppercase">Seshath</span>
+</div>
+<!-- 2. Hewisi / Magul Bera Drummer -->
+<div class="flex flex-col items-center animate-dancer-delayed">
+<svg class="w-14 h-20" viewbox="0 0 64 100">
+<!-- Red/White Turban & Head -->
+<path d="M22 36 Q32 28 42 36 Z" fill="#7A0C1E" stroke="#D4AF37" stroke-width="1.5"></path>
+<circle cx="32" cy="43" fill="#B87A52" r="6"></circle>
+<!-- Torso & Traditional Beads -->
+<rect fill="#B87A52" height="18" rx="4" width="16" x="24" y="50"></rect>
+<path d="M25 51 Q32 60 39 51" fill="none" stroke="#D4AF37" stroke-width="2"></path>
+<!-- White & Red Pleated Sarong -->
+<path d="M22 68 L18 92 L46 92 L42 68 Z" fill="#FFFDF7" stroke="#7A0C1E" stroke-width="1.5"></path>
+<line stroke="#7A0C1E" stroke-width="2.5" x1="32" x2="32" y1="68" y2="92"></line>
+<!-- TraditionalGeta Bera Drum -->
+<ellipse cx="32" cy="67" fill="#D4AF37" rx="14" ry="6" stroke="#5C0B1E" stroke-width="1.5"></ellipse>
+<line stroke="#7A0C1E" stroke-width="1" x1="22" x2="42" y1="62" y2="72"></line>
+<line stroke="#7A0C1E" stroke-width="1" x1="22" x2="42" y1="72" y2="62"></line>
+</svg>
+<span class="text-[9px] font-bold text-[#7A0C1E]/80 uppercase">Magul Bera</span>
+</div>
+<!-- 3. Kandyan Ves Dancer -->
+<div class="flex flex-col items-center animate-dancer">
+<svg class="w-16 h-22" viewbox="0 0 70 100">
+<!-- Ornate Silver/Gold Ves Headdress -->
+<path d="M15 36 Q35 10 55 36 L47 40 L23 40 Z" fill="#D4AF37" stroke="#7A0C1E" stroke-width="1.2"></path>
+<circle cx="35" cy="24" fill="#FFFDF7" r="3"></circle>
+<circle cx="35" cy="43" fill="#B87A52" r="6"></circle>
+<!-- Beaded Chest Avulhara -->
+<rect fill="#B87A52" height="17" rx="4" width="18" x="26" y="50"></rect>
+<circle cx="35" cy="58" fill="none" r="6" stroke="#D4AF37" stroke-width="2"></circle>
+<!-- Flared Dance Arms -->
+<path d="M26 54 L12 46 M44 54 L58 46" stroke="#B87A52" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- Layered White & Gold Ves Frills -->
+<path d="M20 67 Q35 74 50 67 L54 92 L16 92 Z" fill="#FFFDF7" stroke="#D4AF37" stroke-width="1.5"></path>
+<path d="M23 75 Q35 82 47 75" fill="none" stroke="#7A0C1E" stroke-width="2"></path>
+</svg>
+<span class="text-[9px] font-bold text-[#7A0C1E]/80 uppercase">Ves Dancer</span>
+</div>
+<!-- 4. Royal Tusker Elephant Carrying Golden Casket (Ranhiligeya) -->
+<div class="flex flex-col items-center animate-elephant">
+<svg class="w-28 h-24" viewbox="0 0 130 105">
+<!-- Golden Ranhiligeya (Sacred Casket Canopy) on Back -->
+<rect fill="#7A0C1E" height="18" rx="3" stroke="#D4AF37" stroke-width="2" width="34" x="44" y="24"></rect>
+<polygon fill="#D4AF37" points="40,24 61,6 82,24" stroke="#7A0C1E" stroke-width="1.5"></polygon>
+<circle cx="61" cy="16" fill="#FFFDF7" r="3.5"></circle>
+<!-- Elephant Body & Rich Maroon Caparison Cloth -->
+<ellipse cx="62" cy="60" fill="#4A4543" rx="32" ry="21"></ellipse>
+<rect fill="#7A0C1E" height="28" rx="6" stroke="#D4AF37" stroke-width="2" width="46" x="38" y="42"></rect>
+<circle cx="61" cy="56" fill="#D4AF37" r="7"></circle>
+<!-- Legs -->
+<rect fill="#4A4543" height="22" rx="3" width="9" x="36" y="72"></rect>
+<rect fill="#3A3533" height="20" rx="3" width="9" x="50" y="74"></rect>
+<rect fill="#4A4543" height="22" rx="3" width="9" x="68" y="72"></rect>
+<rect fill="#3A3533" height="20" rx="3" width="9" x="81" y="74"></rect>
+<!-- Head, Caparison Mask & Curved White Tusks -->
+<circle cx="95" cy="52" fill="#4A4543" r="15"></circle>
+<path d="M88 40 L106 46 L96 64 Z" fill="#7A0C1E" stroke="#D4AF37" stroke-width="1.5"></path>
+<path d="M104 54 Q118 66 112 78 Q106 82 102 74" fill="none" stroke="#4A4543" stroke-linecap="round" stroke-width="5"></path>
+<path d="M102 62 Q116 66 122 58" fill="none" stroke="#FFFDF7" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="99" cy="49" fill="#FFFDF7" r="2"></circle>
+</svg>
+<span class="text-[9px] font-bold text-[#7A0C1E] uppercase">Royal Tusker</span>
+</div>
+</div>
+<!-- Procession Group 2 (Duplicate for Seamless Infinite Loop) -->
+<div class="flex items-end justify-around w-1/2 px-2 gap-3">
+<div class="flex flex-col items-center animate-dancer">
+<svg class="w-12 h-20" viewbox="0 0 60 100">
+<line stroke="#B8860B" stroke-width="2.5" x1="44" x2="44" y1="12" y2="92"></line>
+<circle cx="44" cy="18" fill="#7A0C1E" r="13" stroke="#D4AF37" stroke-width="2.5"></circle>
+<circle cx="44" cy="18" fill="#D4AF37" r="6"></circle>
+<circle cx="24" cy="48" fill="#B87A52" r="6"></circle>
+<path d="M16 44 Q24 38 32 44" fill="#FFFDF7" stroke="#D4AF37" stroke-width="1.5"></path>
+<rect fill="#7A0C1E" height="18" rx="3" width="14" x="17" y="55"></rect>
+<path d="M16 73 L14 92 L23 92 L24 78 L25 92 L34 92 L32 73 Z" fill="#FFFDF7" stroke="#7A0C1E" stroke-width="1"></path>
+<line stroke="#B87A52" stroke-linecap="round" stroke-width="3" x1="30" x2="44" y1="60" y2="54"></line>
+</svg>
+<span class="text-[9px] font-bold text-[#7A0C1E]/80 uppercase">Seshath</span>
+</div>
+<div class="flex flex-col items-center animate-dancer-delayed">
+<svg class="w-14 h-20" viewbox="0 0 64 100">
+<path d="M22 36 Q32 28 42 36 Z" fill="#7A0C1E" stroke="#D4AF37" stroke-width="1.5"></path>
+<circle cx="32" cy="43" fill="#B87A52" r="6"></circle>
+<rect fill="#B87A52" height="18" rx="4" width="16" x="24" y="50"></rect>
+<path d="M25 51 Q32 60 39 51" fill="none" stroke="#D4AF37" stroke-width="2"></path>
+<path d="M22 68 L18 92 L46 92 L42 68 Z" fill="#FFFDF7" stroke="#7A0C1E" stroke-width="1.5"></path>
+<line stroke="#7A0C1E" stroke-width="2.5" x1="32" x2="32" y1="68" y2="92"></line>
+<ellipse cx="32" cy="67" fill="#D4AF37" rx="14" ry="6" stroke="#5C0B1E" stroke-width="1.5"></ellipse>
+<line stroke="#7A0C1E" stroke-width="1" x1="22" x2="42" y1="62" y2="72"></line>
+<line stroke="#7A0C1E" stroke-width="1" x1="22" x2="42" y1="72" y2="62"></line>
+</svg>
+<span class="text-[9px] font-bold text-[#7A0C1E]/80 uppercase">Magul Bera</span>
+</div>
+<div class="flex flex-col items-center animate-dancer">
+<svg class="w-16 h-22" viewbox="0 0 70 100">
+<path d="M15 36 Q35 10 55 36 L47 40 L23 40 Z" fill="#D4AF37" stroke="#7A0C1E" stroke-width="1.2"></path>
+<circle cx="35" cy="24" fill="#FFFDF7" r="3"></circle>
+<circle cx="35" cy="43" fill="#B87A52" r="6"></circle>
+<rect fill="#B87A52" height="17" rx="4" width="18" x="26" y="50"></rect>
+<circle cx="35" cy="58" fill="none" r="6" stroke="#D4AF37" stroke-width="2"></circle>
+<path d="M26 54 L12 46 M44 54 L58 46" stroke="#B87A52" stroke-linecap="round" stroke-width="3.5"></path>
+<path d="M20 67 Q35 74 50 67 L54 92 L16 92 Z" fill="#FFFDF7" stroke="#D4AF37" stroke-width="1.5"></path>
+<path d="M23 75 Q35 82 47 75" fill="none" stroke="#7A0C1E" stroke-width="2"></path>
+</svg>
+<span class="text-[9px] font-bold text-[#7A0C1E]/80 uppercase">Ves Dancer</span>
+</div>
+<div class="flex flex-col items-center animate-elephant">
+<svg class="w-28 h-24" viewbox="0 0 130 105">
+<rect fill="#7A0C1E" height="18" rx="3" stroke="#D4AF37" stroke-width="2" width="34" x="44" y="24"></rect>
+<polygon fill="#D4AF37" points="40,24 61,6 82,24" stroke="#7A0C1E" stroke-width="1.5"></polygon>
+<circle cx="61" cy="16" fill="#FFFDF7" r="3.5"></circle>
+<ellipse cx="62" cy="60" fill="#4A4543" rx="32" ry="21"></ellipse>
+<rect fill="#7A0C1E" height="28" rx="6" stroke="#D4AF37" stroke-width="2" width="46" x="38" y="42"></rect>
+<circle cx="61" cy="56" fill="#D4AF37" r="7"></circle>
+<rect fill="#4A4543" height="22" rx="3" width="9" x="36" y="72"></rect>
+<rect fill="#3A3533" height="20" rx="3" width="9" x="50" y="74"></rect>
+<rect fill="#4A4543" height="22" rx="3" width="9" x="68" y="72"></rect>
+<rect fill="#3A3533" height="20" rx="3" width="9" x="81" y="74"></rect>
+<circle cx="95" cy="52" fill="#4A4543" r="15"></circle>
+<path d="M88 40 L106 46 L96 64 Z" fill="#7A0C1E" stroke="#D4AF37" stroke-width="1.5"></path>
+<path d="M104 54 Q118 66 112 78 Q106 82 102 74" fill="none" stroke="#4A4543" stroke-linecap="round" stroke-width="5"></path>
+<path d="M102 62 Q116 66 122 58" fill="none" stroke="#FFFDF7" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="99" cy="49" fill="#FFFDF7" r="2"></circle>
+</svg>
+<span class="text-[9px] font-bold text-[#7A0C1E] uppercase">Royal Tusker</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: TRADITIONAL OSARIYA & NILAME PORUWA ILLUSTRATION + LIVE COUNTDOWN -->
+<section class="px-6 py-7 text-center">
+<div class="relative mx-auto w-60 h-60 rounded-full p-2 bg-gradient-to-b from-[#D4AF37] via-[#F3E5AB] to-[#B8860B] shadow-xl">
+<img alt="Traditional Kandyan Bride in Osariya and Groom in Nilame Attire" class="w-full h-full object-cover rounded-full border-2 border-[#FFFDF7]" src="/images/kandyan-ride-2.webp"/>
+<span class="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#7A0C1E] text-[#FFFDF7] border border-[#D4AF37] text-[10px] font-royal tracking-wider uppercase whitespace-nowrap">
+                    Sacred Poruwa Union
+                  </span>
+</div>
+<p class="mt-5 text-xs font-serif-luxury italic text-[#5C0B1E] leading-relaxed px-2">
+                  "Two hearts rooted in sacred Kandyan heritage, stepping onto the Poruwa surrounded by the blessings of family and timeless tradition."
+                </p>
+<!-- Live Ticking Countdown Timer -->
+<div class="mt-6">
+<div class="text-[10px] uppercase tracking-[0.22em] text-[#B8860B] font-bold mb-2.5">
+                    Counting Down To Our Forever
+                  </div>
+<div class="grid grid-cols-4 gap-2 max-w-[320px] mx-auto">
+<div class="p-2.5 rounded-2xl bg-[#7A0C1E] text-[#FFFDF7] border border-[#D4AF37] shadow">
+<div class="font-royal text-xl font-bold text-[#F3E5AB]" id="cdDays">110</div>
+<div class="text-[9px] uppercase tracking-widest opacity-80">Days</div>
+</div>
+<div class="p-2.5 rounded-2xl bg-[#7A0C1E] text-[#FFFDF7] border border-[#D4AF37] shadow">
+<div class="font-royal text-xl font-bold text-[#F3E5AB]" id="cdHours">19</div>
+<div class="text-[9px] uppercase tracking-widest opacity-80">Hours</div>
+</div>
+<div class="p-2.5 rounded-2xl bg-[#7A0C1E] text-[#FFFDF7] border border-[#D4AF37] shadow">
+<div class="font-royal text-xl font-bold text-[#F3E5AB]" id="cdMins">45</div>
+<div class="text-[9px] uppercase tracking-widest opacity-80">Mins</div>
+</div>
+<div class="p-2.5 rounded-2xl bg-[#7A0C1E] text-[#FFFDF7] border border-[#D4AF37] shadow">
+<div class="font-royal text-xl font-bold text-[#F3E5AB]" id="cdSecs">12</div>
+<div class="text-[9px] uppercase tracking-widest opacity-80">Secs</div>
+</div>
+</div>
+<!-- Add the Wedding to Your Calendar Button -->
+<button class="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#F9F3E6] hover:bg-[#D4AF37]/20 text-[#7A0C1E] border border-[#D4AF37] text-xs font-semibold transition-all shadow-sm" id="btnAddToCalendar" onclick="downloadWeddingCalendarIcs()">
+<span>📅</span>
+<span>Add the wedding to your calendar</span>
+</button>
+</div>
+</section>
+<!-- SECTION 4: JOURNEY TOGETHER (LOVE STORY TIMELINE AS IN REEL) -->
+<section class="px-6 py-6 bg-[#F9F3E6]/90 border-t border-[#D4AF37]/40" id="secStory"><h3 class="font-royal text-lg text-[#7A0C1E] font-bold mt-0.5">Journey Together</h3><p class="text-sm leading-relaxed" id="veloraStory" style="color:#7a0c1e"></p></section>
+<!-- SECTION 5: CELEBRATE WITH US (AUSPICIOUS EVENTS SCHEDULE) -->
+<section class="px-6 py-6 border-t border-[#D4AF37]/40" id="secEvents">
+<div class="text-center mb-5">
+<span class="text-[10px] uppercase tracking-[0.22em] text-[#B8860B] font-bold">Auspicious Nekatha</span>
+<h3 class="font-royal text-lg text-[#7A0C1E] font-bold mt-0.5">Celebrate With Us</h3>
+</div>
+<div class="space-y-3">
+<!-- Event 1 -->
+<div class="p-3.5 rounded-2xl bg-[#F9F3E6] border border-[#D4AF37]/60 flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#7A0C1E] text-[#F3E5AB] flex items-center justify-center font-bold text-sm shrink-0">
+                      🪔
+                    </div>
+<div class="flex-1 text-left">
+<div class="flex items-center justify-between">
+<h4 class="text-xs font-bold text-[#7A0C1E]">Registration &amp; Pahana Lighting</h4>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#7A0C1E]/10 text-[#7A0C1E]">08:45 AM</span>
+</div>
+<p class="text-[11px] text-[#5C0B1E]/90 mt-0.5">Cinnamon Citadel Terrace, Kandy</p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="p-3.5 rounded-2xl bg-[#F9F3E6] border border-[#D4AF37]/60 flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#7A0C1E] text-[#F3E5AB] flex items-center justify-center font-bold text-sm shrink-0">
+                      👑
+                    </div>
+<div class="flex-1 text-left">
+<div class="flex items-center justify-between">
+<h4 class="text-xs font-bold text-[#7A0C1E]">Sacred Poruwa Ceremony</h4>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#7A0C1E]/10 text-[#7A0C1E]">09:38 AM</span>
+</div>
+<p class="text-[11px] text-[#5C0B1E]/90 mt-0.5">Magul Bera, Ashtaka &amp; Jayamangala Gatha</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="p-3.5 rounded-2xl bg-[#F9F3E6] border border-[#D4AF37]/60 flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#7A0C1E] text-[#F3E5AB] flex items-center justify-center font-bold text-sm shrink-0">
+                      🥂
+                    </div>
+<div class="flex-1 text-left">
+<div class="flex items-center justify-between">
+<h4 class="text-xs font-bold text-[#7A0C1E]">Festive Wedding Luncheon</h4>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#7A0C1E]/10 text-[#7A0C1E]">12:30 PM</span>
+</div>
+<p class="text-[11px] text-[#5C0B1E]/90 mt-0.5">The Grand Ballroom, Cinnamon Citadel</p>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="p-3.5 rounded-2xl bg-[#F9F3E6] border border-[#D4AF37]/60 flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#7A0C1E] text-[#F3E5AB] flex items-center justify-center font-bold text-sm shrink-0">
+                      🚗
+                    </div>
+<div class="flex-1 text-left">
+<div class="flex items-center justify-between">
+<h4 class="text-xs font-bold text-[#7A0C1E]">Auspicious Going Away</h4>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#7A0C1E]/10 text-[#7A0C1E]">03:52 PM</span>
+</div>
+<p class="text-[11px] text-[#5C0B1E]/90 mt-0.5">Vintage Classic Convertible Departure</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: CAPTURED MOMENTS GALLERY & VENUE DIRECTION -->
+<section class="px-6 py-6 bg-[#F9F3E6]/90 border-t border-[#D4AF37]/40" id="secVenue">
+<div class="text-center mb-4">
+<span class="text-[10px] uppercase tracking-[0.22em] text-[#B8860B] font-bold">Memories &amp; Portraits</span>
+<h3 class="font-royal text-lg text-[#7A0C1E] font-bold mt-0.5">Captured Moments</h3>
+</div>
+<div class="grid grid-cols-3 gap-2 mb-5">
+<button class="rounded-xl overflow-hidden border border-[#D4AF37] h-24 group relative" onclick="openGalleryLightbox(0)">
+<img alt="Sunset Ride" class="w-full h-full object-cover group-hover:scale-110 transition-transform" id="galleryThumb0" src="/images/kandyan-ride-0.webp"/>
+</button>
+<button class="rounded-xl overflow-hidden border border-[#D4AF37] h-24 group relative" onclick="openGalleryLightbox(1)">
+<img alt="Poruwa Attire" class="w-full h-full object-cover group-hover:scale-110 transition-transform" src="/images/kandyan-ride-2.webp"/>
+</button>
+<button class="rounded-xl overflow-hidden border border-[#D4AF37] h-24 group relative" onclick="openGalleryLightbox(2)">
+<img alt="Kandy Lake Twilight" class="w-full h-full object-cover group-hover:scale-110 transition-transform" src="/images/kandyan-ride-3.webp"/>
+</button>
+</div>
+<!-- Venue Map Card -->
+<div class="p-4 rounded-2xl bg-[#FFFDF7] border border-[#D4AF37] text-center space-y-2">
+<div class="text-xs font-bold text-[#7A0C1E]" id="mapCardVenueTitle">
+                    The Grand Ballroom, Cinnamon Citadel, Kandy
+                  </div>
+<p class="text-[11px] text-[#5C0B1E]">
+                    Dress Code: Osariya / Mul Anduma or Formal
+                  </p>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#7A0C1E] text-[#FFFDF7] text-[11px] font-semibold hover:opacity-90 transition-opacity" href="https://maps.google.com/?q=Cinnamon+Citadel+Kandy" id="mapDirectionLink" rel="noopener noreferrer" target="_blank">
+<span>📍</span>
+<span>Open Venue in Google Maps</span>
+</a>
+</div>
+</section>
+<!-- SECTION 7: RSVP & BLESSINGS WALL -->
+<section class="px-6 py-6 border-t border-[#D4AF37]/40" id="secRsvp">
+<div class="text-center mb-4">
+<span class="text-[10px] uppercase tracking-[0.22em] text-[#B8860B] font-bold">Confirm Attendance</span>
+<h3 class="font-royal text-lg text-[#7A0C1E] font-bold mt-0.5">RSVP &amp; Blessings</h3>
+</div>
+<p class="velora-local-note">Demo RSVP: saved in this browser only. Your response is not sent to the couple.</p><form class="space-y-3 bg-[#F9F3E6] p-4 rounded-2xl border border-[#D4AF37]/60 text-xs" id="rsvpForm" onsubmit="submitGuestRsvp(event)">
+<div>
+<label class="block text-[11px] font-semibold text-[#7A0C1E] mb-1" for="rsvpGuestName">Your Full Name</label>
+<input class="w-full px-3 py-2 rounded-xl bg-[#FFFDF7] border border-[#D4AF37]/60 text-[#5C0B1E] focus:outline-none" id="rsvpGuestName" placeholder="e.g., Dilshan &amp; Family" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="block text-[11px] font-semibold text-[#7A0C1E] mb-1" for="rsvpStatus">Attendance</label>
+<select class="w-full px-2.5 py-2 rounded-xl bg-[#FFFDF7] border border-[#D4AF37]/60 text-[#5C0B1E]" id="rsvpStatus">
+<option value="Joyfully Attending">Joyfully Attending</option>
+<option value="Sending Warm Wishes">Sending Warm Wishes</option>
+</select>
+</div>
+<div>
+<label class="block text-[11px] font-semibold text-[#7A0C1E] mb-1" for="rsvpGuestsCount">Guests</label>
+<select class="w-full px-2.5 py-2 rounded-xl bg-[#FFFDF7] border border-[#D4AF37]/60 text-[#5C0B1E]" id="rsvpGuestsCount">
+<option value="1 Guest">1 Guest</option>
+<option value="2 Guests">2 Guests</option>
+<option value="Family (3+)">Family (3+)</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-[11px] font-semibold text-[#7A0C1E] mb-1" for="rsvpWishText">Blessing for the Couple</label>
+<textarea class="w-full px-3 py-2 rounded-xl bg-[#FFFDF7] border border-[#D4AF37]/60 text-[#5C0B1E] focus:outline-none" id="rsvpWishText" placeholder="Wishing you a lifetime of happiness..." rows="2"></textarea>
+</div>
+<button class="w-full py-2.5 rounded-xl bg-[#7A0C1E] hover:bg-[#5C0B1E] text-[#F3E5AB] font-bold uppercase tracking-wider text-[11px] border border-[#D4AF37] shadow transition-all" type="submit">
+                    💌 Send RSVP &amp; Blessing
+                  </button>
+</form>
+<!-- Submitted Guest Blessings Feed -->
+<div class="mt-4 space-y-2 text-left" id="guestWishesList"></div>
+</section>
+</div>
+<!-- ========== PERSISTENT BOTTOM NAVIGATION BAR (EXACT REEL UI) ========== -->
+<div class="absolute bottom-0 inset-x-0 z-20 bg-[#FFFDF7]/95 backdrop-blur-md border-t border-[#D4AF37]/50 px-3 py-2 flex items-center justify-between gap-2">
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-xl text-[#7A0C1E] hover:bg-[#7A0C1E]/10 transition-colors text-sm" onclick="scrollToCardSection('secHome')" title="Home">
+                  🏠
+                </button>
+<button class="p-2 rounded-xl text-[#7A0C1E] hover:bg-[#7A0C1E]/10 transition-colors text-sm" onclick="scrollToCardSection('secStory')" title="Journey Together">
+                  ❤️
+                </button>
+<button class="p-2 rounded-xl text-[#7A0C1E] hover:bg-[#7A0C1E]/10 transition-colors text-sm" onclick="scrollToCardSection('secEvents')" title="Celebrate With Us">
+                  📅
+                </button>
+<button class="p-2 rounded-xl text-[#7A0C1E] hover:bg-[#7A0C1E]/10 transition-colors text-sm" onclick="scrollToCardSection('secVenue')" title="Venue &amp; Gallery">
+                  📍
+                </button>
+<button class="p-2 rounded-xl text-[#7A0C1E] hover:bg-[#7A0C1E]/10 transition-colors text-sm" onclick="scrollToCardSection('secRsvp')" title="RSVP">
+                  ✉️
+                </button>
+</div>
+<!-- "Make it yours ->" CTA Pill from Reel -->
+<button class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#7A0C1E] to-[#5C0B1E] text-[#F3E5AB] border border-[#D4AF37] text-[11px] font-bold flex items-center gap-1 shadow hover:scale-105 transition-transform" id="btnMakeItYours" onclick="window.top.location.href='/studio/?template=kandyan-vintage-ride'">
+<span>Make it yours</span>
+<span>→</span>
+</button>
+</div>
+</div><script>
+    // =========================================================================
+    // 1. TEMPLATE STATE & CUSTOMIZATION ENGINE
+    // =========================================================================
+    const defaultTemplateState = {
+      id: 'kandyan-vintage-perahera',
+      name: 'Kandyan Vintage Sunset & Perahera',
+      subtitle: 'Animated sunset classic car hero, falling petals & moving Kandyan Perahera procession',
+      style: 'Traditional',
+      tier: 'Royal',
+      priceLkr: 8500,
+      openingType: 'curtain',
+      blessing: 'SRI SUBA MANGALAM!',
+      couple: 'Kavindi & Dulan',
+      brideParents: 'Mr. & Mrs. H. M. Wickramasinghe',
+      groomParents: 'Mr. & Mrs. D. S. Senanayake',
+      date: '2027-02-20',
+      displayDate: 'Saturday, 20th February 2027',
+      auspiciousTime: '09:38 AM (Poruwa Nekatha)',
+      venue: 'The Grand Ballroom, Cinnamon Citadel, Kandy',
+      city: 'Kandy',
+      paperBg: '#FFFDF7',
+      cardBg: '#F9F3E6',
+      primaryInk: '#7A0C1E',
+      accentGold: '#D4AF37',
+      sealHex: '#B8860B'
+    };
+
+    let currentState = Object.assign({}, defaultTemplateState);
+    let isCatalogFav = true;
+    let petalsEnabled = true;
+    let carMotionEnabled = true;
+    let peraheraRunning = true;
+    let targetPetalCount = 42;
+
+    function showToast(message) {
+      const toast = document.getElementById('toastBanner');
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3200);
+    }
+
+    function switchStudioTab(tab) {
+      const mainGrid = document.getElementById('studioMainGrid');
+      const codeSec = document.getElementById('studioCodeSection');
+      const btnPrev = document.getElementById('tabBtnPreview');
+      const btnCust = document.getElementById('tabBtnCustomize');
+      const btnCode = document.getElementById('tabBtnCode');
+      const customizerBox = document.getElementById('customizerFormBox');
+
+      const activeClass = 'px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-gradient-to-r from-amber-500 to-amber-600 text-black shadow';
+      const idleClass = 'px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all text-stone-300 hover:text-white';
+
+      if (tab === 'code') {
+        mainGrid.classList.add('hidden');
+        codeSec.classList.remove('hidden');
+        btnPrev.className = idleClass;
+        btnCust.className = idleClass;
+        btnCode.className = activeClass;
+        renderVeloraExportCode();
+      } else {
+        mainGrid.classList.remove('hidden');
+        codeSec.classList.add('hidden');
+        if (tab === 'customize') {
+          btnPrev.className = idleClass;
+          btnCust.className = activeClass;
+          btnCode.className = idleClass;
+          if (customizerBox) {
+            customizerBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        } else {
+          btnPrev.className = activeClass;
+          btnCust.className = idleClass;
+          btnCode.className = idleClass;
+        }
+      }
+    }
+
+    function syncCustomDetails() {
+      const blessing = document.getElementById('inputBlessing').value || defaultTemplateState.blessing;
+      const couple = document.getElementById('inputCouple').value || defaultTemplateState.couple;
+      const brideParents = document.getElementById('inputBrideParents').value || defaultTemplateState.brideParents;
+      const groomParents = document.getElementById('inputGroomParents').value || defaultTemplateState.groomParents;
+      const displayDate = document.getElementById('inputDisplayDate').value || defaultTemplateState.displayDate;
+      const auspiciousTime = document.getElementById('inputAuspiciousTime').value || defaultTemplateState.auspiciousTime;
+      const venue = document.getElementById('inputVenue').value || defaultTemplateState.venue;
+      const priceLkr = parseInt(document.getElementById('inputPriceLkr').value, 10) || 8500;
+
+      currentState.blessing = blessing;
+      currentState.couple = couple;
+      currentState.brideParents = brideParents;
+      currentState.groomParents = groomParents;
+      currentState.displayDate = displayDate;
+      currentState.auspiciousTime = auspiciousTime;
+      currentState.venue = venue;
+      currentState.priceLkr = priceLkr;
+
+      // Update Phone Invitation DOM
+      document.getElementById('cardBlessing').textContent = blessing;
+      document.getElementById('cardCoupleNames').textContent = couple;
+      document.getElementById('sealCoupleText').textContent = couple;
+      document.getElementById('cardBrideParents').textContent = brideParents;
+      document.getElementById('cardGroomParents').textContent = groomParents;
+      document.getElementById('cardDisplayDate').textContent = displayDate;
+      document.getElementById('cardAuspiciousTime').textContent = auspiciousTime;
+      document.getElementById('cardVenue').textContent = venue;
+      document.getElementById('mapCardVenueTitle').textContent = venue;
+
+      // Update VELORA Catalog Card DOM
+      document.getElementById('catalogCoupleBadge').textContent = couple;
+      document.getElementById('catalogTime').textContent = auspiciousTime + ' • ' + displayDate;
+      document.getElementById('catalogVenue').textContent = venue;
+      document.getElementById('catalogPrice').textContent = 'LKR ' + priceLkr.toLocaleString();
+
+      renderVeloraExportCode();
+    }
+
+    function applyPalettePreset(preset) {
+      const root = document.documentElement;
+      if (preset === 'ceylon-emerald') {
+        currentState.paperBg = '#F9FBF7';
+        currentState.cardBg = '#EDF5EA';
+        currentState.primaryInk = '#0F4C3A';
+        currentState.accentGold = '#D4AF37';
+      } else if (preset === 'royal-midnight') {
+        currentState.paperBg = '#FFFDF9';
+        currentState.cardBg = '#F4EFE6';
+        currentState.primaryInk = '#1E293B';
+        currentState.accentGold = '#C59B27';
+      } else {
+        currentState.paperBg = '#FFFDF7';
+        currentState.cardBg = '#F9F3E6';
+        currentState.primaryInk = '#7A0C1E';
+        currentState.accentGold = '#D4AF37';
+      }
+      root.style.setProperty('--paper-bg', currentState.paperBg);
+      root.style.setProperty('--card-bg', currentState.cardBg);
+      root.style.setProperty('--primary-ink', currentState.primaryInk);
+      root.style.setProperty('--accent-gold', currentState.accentGold);
+      renderVeloraExportCode();
+      showToast('Applied ' + preset + ' color palette!');
+    }
+
+    function resetTemplateDefaults() {
+      document.getElementById('inputBlessing').value = defaultTemplateState.blessing;
+      document.getElementById('inputCouple').value = defaultTemplateState.couple;
+      document.getElementById('inputBrideParents').value = defaultTemplateState.brideParents;
+      document.getElementById('inputGroomParents').value = defaultTemplateState.groomParents;
+      document.getElementById('inputDisplayDate').value = defaultTemplateState.displayDate;
+      document.getElementById('inputAuspiciousTime').value = defaultTemplateState.auspiciousTime;
+      document.getElementById('inputVenue').value = defaultTemplateState.venue;
+      document.getElementById('inputPriceLkr').value = defaultTemplateState.priceLkr;
+      document.getElementById('inputThemePreset').value = 'kandyan-maroon';
+      applyPalettePreset('kandyan-maroon');
+      syncCustomDetails();
+      showToast('Restored default Kavindi & Dulan wedding details.');
+    }
+
+    function toggleCatalogFavorite() {
+      isCatalogFav = !isCatalogFav;
+      const icon = document.getElementById('catalogFavIcon');
+      if (isCatalogFav) {
+        icon.setAttribute('class', 'w-4 h-4 fill-rose-500 text-rose-500');
+        showToast('Saved to VELORA Favorites ❤️');
+      } else {
+        icon.setAttribute('class', 'w-4 h-4 text-white');
+      }
+    }
+
+    // =========================================================================
+    // 2. CURTAIN UNBOXING & NAVIGATION
+    // =========================================================================
+    function openInvitationCurtain() {
+      const left = document.getElementById('curtainLeft');
+      const right = document.getElementById('curtainRight');
+      const seal = document.getElementById('curtainSealWrap');
+      const overlay = document.getElementById('curtainOverlay');
+
+      playChimeChord();
+      seal.style.opacity = '0';
+      left.classList.add('curtain-open-left');
+      right.classList.add('curtain-open-right');
+
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+      }, 900);
+    }
+
+    function reopenEnvelopeCurtain() {
+      const left = document.getElementById('curtainLeft');
+      const right = document.getElementById('curtainRight');
+      const seal = document.getElementById('curtainSealWrap');
+      const overlay = document.getElementById('curtainOverlay');
+
+      overlay.classList.remove('hidden');
+      setTimeout(() => {
+        left.classList.remove('curtain-open-left');
+        right.classList.remove('curtain-open-right');
+        seal.style.opacity = '1';
+      }, 30);
+    }
+
+    function scrollToCardSection(secId) {
+      const container = document.getElementById('phoneScrollContainer');
+      const target = document.getElementById(secId);
+      if (container && target) {
+        container.scrollTo({
+          top: target.offsetTop - 16,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    function scrollToPhoneSimulator() {
+      const sim = document.getElementById('phoneSimulatorSection');
+      if (sim) {
+        sim.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // =========================================================================
+    // 3. 60FPS HTML5 CANVAS ANIMATED VIDEO HERO (VINTAGE CAR + FALLING PETALS)
+    // =========================================================================
+    const canvas = document.getElementById('heroAnimationCanvas');
+    const ctx = canvas.getContext('2d');
+    const heroImg = document.getElementById('heroCarSourceImg');
+    let petals = [];
+    let animTick = 0;
+
+    function createPetal(randomY) {
+      const isJasmine = Math.random() > 0.62;
+      return {
+        x: Math.random() * canvas.width,
+        y: randomY ? Math.random() * canvas.height : -15 - Math.random() * 40,
+        size: isJasmine ? 4 + Math.random() * 4 : 6 + Math.random() * 6.5,
+        speedY: 0.65 + Math.random() * 1.15,
+        speedX: -0.45 + Math.random() * 0.9,
+        swayAmp: 0.4 + Math.random() * 1.1,
+        swayFreq: 0.015 + Math.random() * 0.025,
+        angle: Math.random() * Math.PI * 2,
+        spin: (Math.random() - 0.5) * 0.03,
+        isJasmine: isJasmine,
+        alpha: 0.72 + Math.random() * 0.26
+      };
+    }
+
+    function initPetals(count) {
+      petals = [];
+      for (let i = 0; i < count; i++) {
+        petals.push(createPetal(true));
+      }
+    }
+
+    function updatePetalCount(val) {
+      targetPetalCount = parseInt(val, 10) || 42;
+      document.getElementById('petalCountLabel').textContent = targetPetalCount + ' Petals';
+      initPetals(targetPetalCount);
+    }
+
+    function togglePetalShower() {
+      petalsEnabled = !petalsEnabled;
+      const badge = document.getElementById('petalStateBadge');
+      badge.textContent = petalsEnabled ? 'ON' : 'OFF';
+      badge.className = petalsEnabled
+        ? 'px-2 py-0.5 rounded bg-amber-400 text-black font-bold text-[10px]'
+        : 'px-2 py-0.5 rounded bg-stone-700 text-stone-300 font-bold text-[10px]';
+    }
+
+    function toggleCarMotion() {
+      carMotionEnabled = !carMotionEnabled;
+      const badge = document.getElementById('carMotionBadge');
+      badge.textContent = carMotionEnabled ? 'ON' : 'OFF';
+      badge.className = carMotionEnabled
+        ? 'px-2 py-0.5 rounded bg-amber-400 text-black font-bold text-[10px]'
+        : 'px-2 py-0.5 rounded bg-stone-700 text-stone-300 font-bold text-[10px]';
+    }
+
+    function togglePeraheraMotion() {
+      peraheraRunning = !peraheraRunning;
+      const track = document.getElementById('peraheraTrack');
+      const badge = document.getElementById('peraheraStateBadge');
+      if (peraheraRunning) {
+        track.classList.remove('paused');
+        badge.textContent = 'ON';
+        badge.className = 'px-2 py-0.5 rounded bg-amber-400 text-black font-bold text-[10px]';
+      } else {
+        track.classList.add('paused');
+        badge.textContent = 'OFF';
+        badge.className = 'px-2 py-0.5 rounded bg-stone-700 text-stone-300 font-bold text-[10px]';
+      }
+    }
+
+    function renderHeroAnimationFrame() {
+      animTick += 1;
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      // 1. Draw the 3D Couple in Vintage Classic Car with gentle suspension & camera drift
+      if (heroImg && heroImg.complete && heroImg.naturalWidth > 0) {
+        ctx.save();
+        const scale = carMotionEnabled ? 1.04 + Math.sin(animTick * 0.015) * 0.018 : 1.02;
+        const offsetX = carMotionEnabled ? Math.sin(animTick * 0.012) * 4.5 : 0;
+        const offsetY = carMotionEnabled ? Math.cos(animTick * 0.045) * 2.2 : 0;
+
+        ctx.translate(w / 2 + offsetX, h / 2 + offsetY);
+        ctx.scale(scale, scale);
+        ctx.drawImage(heroImg, -w / 2, -h / 2, w, h);
+        ctx.restore();
+      } else {
+        const grad = ctx.createLinearGradient(0, 0, 0, h);
+        grad.addColorStop(0, '#F59E0B');
+        grad.addColorStop(1, '#7A0C1E');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+      }
+
+      // 2. Animated Golden-Hour Sunset Rays pulsing from top-right Kandy hills
+      ctx.save();
+      const sunPulse = 0.16 + Math.sin(animTick * 0.025) * 0.06;
+      const sunGrad = ctx.createRadialGradient(w * 0.80, h * 0.16, 8, w * 0.80, h * 0.16, w * 0.65);
+      sunGrad.addColorStop(0, 'rgba(255, 244, 196, ' + (sunPulse + 0.18) + ')');
+      sunGrad.addColorStop(0.45, 'rgba(245, 158, 11, ' + sunPulse + ')');
+      sunGrad.addColorStop(1, 'rgba(245, 158, 11, 0)');
+      ctx.fillStyle = sunGrad;
+      ctx.fillRect(0, 0, w, h);
+      ctx.restore();
+
+      // 3. Cascading Rose & Jasmine Petals Shower
+      if (petalsEnabled) {
+        for (let i = 0; i < petals.length; i++) {
+          const p = petals[i];
+          p.y += p.speedY;
+          p.x += p.speedX + Math.sin(animTick * p.swayFreq + i) * p.swayAmp;
+          p.angle += p.spin;
+
+          if (p.y > h + 20) {
+            petals[i] = createPetal(false);
+          }
+          if (p.x > w + 20) p.x = -15;
+          if (p.x < -20) p.x = w + 15;
+
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.angle);
+          ctx.globalAlpha = p.alpha;
+
+          if (p.isJasmine) {
+            // White/Cream Jasmine Blossom
+            ctx.fillStyle = '#FFFDF5';
+            ctx.beginPath();
+            ctx.ellipse(0, 0, p.size * 0.85, p.size * 0.5, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#F59E0B';
+            ctx.beginPath();
+            ctx.arc(0, 0, 1.3, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            // Soft Rose / Pink Lotus Petal
+            const petalGrad = ctx.createLinearGradient(-p.size, -p.size, p.size, p.size);
+            petalGrad.addColorStop(0, '#FDA4AF');
+            petalGrad.addColorStop(0.6, '#FB7185');
+            petalGrad.addColorStop(1, '#E11D48');
+            ctx.fillStyle = petalGrad;
+            ctx.beginPath();
+            ctx.moveTo(0, -p.size * 0.7);
+            ctx.bezierCurveTo(p.size, -p.size * 0.6, p.size * 0.9, p.size * 0.7, 0, p.size);
+            ctx.bezierCurveTo(-p.size * 0.9, p.size * 0.7, -p.size, -p.size * 0.6, 0, -p.size * 0.7);
+            ctx.fill();
+          }
+          ctx.restore();
+        }
+      }
+
+      requestAnimationFrame(renderHeroAnimationFrame);
+    }
+
+    // Export 5-second WebM Animated Video directly from the Live Canvas
+    let isRecordingClip = false;
+    function recordHeroVideoClip() {
+      if (isRecordingClip) return;
+      if (typeof canvas.captureStream !== 'function' || typeof MediaRecorder === 'undefined') {
+        showToast('Video recording is supported in desktop Chrome/Edge/Firefox browsers.');
+        return;
+      }
+
+      try {
+        isRecordingClip = true;
+        const label = document.getElementById('recordBtnLabel');
+        label.textContent = 'Recording 4s Reel...';
+        const stream = canvas.captureStream(30);
+        const chunks = [];
+        const recorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+
+        recorder.ondataavailable = function(e) {
+          if (e.data && e.data.size > 0) chunks.push(e.data);
+        };
+
+        recorder.onstop = function() {
+          const blob = new Blob(chunks, { type: 'video/webm' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'velora_kandyan_sunset_reel.webm';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          isRecordingClip = false;
+          label.textContent = 'Export Animated Video';
+          showToast('Downloaded velora_kandyan_sunset_reel.webm!');
+        };
+
+        recorder.start();
+        setTimeout(() => {
+          if (recorder.state === 'recording') recorder.stop();
+        }, 4000);
+      } catch (err) {
+        isRecordingClip = false;
+        document.getElementById('recordBtnLabel').textContent = 'Export Animated Video';
+        showToast('Live canvas animation is active!');
+      }
+    }
+
+    // =========================================================================
+    // 4. WEB AUDIO API TRADITIONAL KANDYAN MELODY SYNTHESIZER
+    // =========================================================================
+    let audioCtx = null;
+    let musicPlaying = false;
+    let musicInterval = null;
+
+    function ensureAudioCtx() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playNote(freq, delay, duration, type, gainLevel) {
+      if (!audioCtx) return;
+      const now = audioCtx.currentTime + delay;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type || 'sine';
+      osc.frequency.setValueAtTime(freq, now);
+
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.exponentialRampToValueAtTime(gainLevel || 0.08, now + 0.06);
+      gain.gain.exponentialRampToValueAtTime(0.0008, now + duration);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + duration + 0.05);
+    }
+
+    function playChimeChord() {
+      ensureAudioCtx();
+      playNote(523.25, 0.0, 0.9, 'sine', 0.07);
+      playNote(659.25, 0.14, 1.1, 'sine', 0.07);
+      playNote(783.99, 0.28, 1.4, 'triangle', 0.06);
+    }
+
+    function toggleWeddingAudio() {
+      ensureAudioCtx();
+      musicPlaying = !musicPlaying;
+      const floatIcon = document.getElementById('floatingMusicIcon');
+      const floatBtn = document.getElementById('btnFloatingAudio');
+      const sideBadge = document.getElementById('musicStateBadge');
+
+      if (musicPlaying) {
+        floatIcon.textContent = '🎵';
+        floatBtn.classList.add('spin-disc');
+        sideBadge.textContent = 'ON';
+        sideBadge.className = 'px-2 py-0.5 rounded bg-amber-400 text-black font-bold text-[10px]';
+
+        // Gentle Sri Lankan auspicious pentatonic melody loop
+        const scale = [523.25, 587.33, 659.25, 783.99, 880.0, 783.99, 659.25, 587.33];
+        let step = 0;
+        playChimeChord();
+        musicInterval = setInterval(() => {
+          if (!musicPlaying) return;
+          const note = scale[step % scale.length];
+          playNote(note, 0, 0.85, 'sine', 0.05);
+          if (step % 2 === 0) {
+            playNote(note / 2, 0.1, 1.1, 'triangle', 0.035);
+          }
+          step++;
+        }, 650);
+        showToast('Playing traditional auspicious melody 🎵');
+      } else {
+        floatIcon.textContent = '🔇';
+        floatBtn.classList.remove('spin-disc');
+        sideBadge.textContent = 'OFF';
+        sideBadge.className = 'px-2 py-0.5 rounded bg-stone-700 text-stone-300 font-bold text-[10px]';
+        if (musicInterval) clearInterval(musicInterval);
+      }
+    }
+
+    // =========================================================================
+    // 5. LIVE COUNTDOWN TIMER & CALENDAR (.ICS) DOWNLOAD
+    // =========================================================================
+    function updateCountdown() {
+      const weddingTime = new Date(currentState.date + 'T' + (currentState.time || '09:38') + ':00+05:30').getTime();
+      const now = Date.now();
+      const diff = Math.max(0, weddingTime - now);
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('cdDays').textContent = String(days).padStart(2, '0');
+      document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cdMins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cdSecs').textContent = String(secs).padStart(2, '0');
+    }
+
+    function downloadWeddingCalendarIcs() {
+      const icsLines = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//VELORA Ceylon Vows//Wedding Invitation//EN',
+        'BEGIN:VEVENT',
+        'DTSTART:' + calendarStamp(0),
+        'DTEND:' + calendarStamp(7200000),
+        'SUMMARY:Wedding of ' + calendarEscape(currentState.couple),
+        'DESCRIPTION:' + currentState.blessing + ' - Auspicious Poruwa Ceremony at ' + currentState.auspiciousTime,
+        'LOCATION:' + calendarEscape(currentState.venue),
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([icsLines], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'velora_wedding_invitation.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showToast('Added ' + currentState.couple + ' Wedding to your Calendar! 📅');
+    }
+
+    // =========================================================================
+    // 6. GALLERY LIGHTBOX & RSVP FORM
+    // =========================================================================
+    const galleryItems = [
+      { id: 'heroCarSourceImg', caption: 'Golden Hour Vintage Ride in the Kandy Hills' },
+      { srcFromAlt: 'Poruwa Attire', caption: 'Sacred Kandyan Poruwa Ceremony — Osariya & Nilame Attire' },
+      { srcFromAlt: 'Kandy Lake Twilight', caption: 'Captured Moments by Kandy Lake at Twilight' }
+    ];
+
+    function openGalleryLightbox(index) {
+      const modal = document.getElementById('galleryModal');
+      const lightImg = document.getElementById('lightboxImg');
+      const caption = document.getElementById('lightboxCaption');
+      const thumbs = document.querySelectorAll('#secVenue img');
+      if (thumbs[index]) {
+        lightImg.src = thumbs[index].src;
+      }
+      caption.textContent = galleryItems[index] ? galleryItems[index].caption : 'Captured Moment';
+      modal.classList.remove('hidden');
+    }
+
+    function closeGalleryLightbox() {
+      document.getElementById('galleryModal').classList.add('hidden');
+    }
+
+    function submitGuestRsvp(event) {
+      event.preventDefault();
+      const nameInput = document.getElementById('rsvpGuestName');
+      const statusInput = document.getElementById('rsvpStatus');
+      const countInput = document.getElementById('rsvpGuestsCount');
+      const wishInput = document.getElementById('rsvpWishText');
+      const list = document.getElementById('guestWishesList');
+
+      const guestName = nameInput.value.trim();
+      if (!guestName) return;
+      const wish = wishInput.value.trim() || 'Wishing you both a blessed wedded life!';
+
+      const card = document.createElement('div');
+      card.className = 'p-3 rounded-xl bg-[#FFFDF7] border border-[#D4AF37] text-xs shadow-sm';
+      card.innerHTML =
+        '<div class="flex justify-between font-bold text-[#7A0C1E]">' +
+        '<span>' + escapeHtml(guestName) + '</span>' +
+        '<span class="text-[10px] text-[#B8860B]">' + escapeHtml(statusInput.value) + ' (' + escapeHtml(countInput.value) + ')</span>' +
+        '</div>' +
+        '<p class="text-[11px] text-[#5C0B1E] mt-1 italic">"' + escapeHtml(wish) + '"</p>';
+
+      list.prepend(card);
+      nameInput.value = '';
+      wishInput.value = '';
+      playChimeChord();
+      parent.postMessage({type:'velora-rsvp',name:guestName,attending:statusInput.value.toLowerCase().includes('accept')||statusInput.value.toLowerCase().includes('attend'),guests:parseInt(countInput.value,10)||3,note:wish},location.origin);
+      try { localStorage.setItem('velora-kandyan-demo-rsvp', JSON.stringify({name:guestName,status:statusInput.value,guests:countInput.value,wish})); } catch {}
+      showToast('Thank you, ' + guestName + '! Demo response saved in this browser only.');
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // =========================================================================
+    // 7. NEXT.JS VELORA CODE GENERATOR & CLIPBOARD EXPORT
+    // =========================================================================
+    function renderVeloraExportCode() {
+      const templateTsCode = [
+        "// Add this object to the templates array in src/data/templates.ts",
+        "{",
+        "  id: '" + currentState.id + "',",
+        "  name: '" + currentState.name.replace(/'/g, "\\'") + "',",
+        "  subtitle: '" + currentState.subtitle.replace(/'/g, "\\'") + "',",
+        "  style: 'Traditional',",
+        "  tier: 'Royal',",
+        "  priceLkr: " + currentState.priceLkr + ",",
+        "  openingType: 'curtain',",
+        "  hasGuestNames: true,",
+        "  hasVideoOpening: true,",
+        "  paperBg: '" + currentState.paperBg + "',",
+        "  cardBg: '" + currentState.cardBg + "',",
+        "  primaryInk: '" + currentState.primaryInk + "',",
+        "  accentGold: '" + currentState.accentGold + "',",
+        "  sealHex: '" + currentState.sealHex + "',",
+        "  blessing: '" + currentState.blessing.replace(/'/g, "\\'") + "',",
+        "  couple: '" + currentState.couple.replace(/'/g, "\\'") + "',",
+        "  brideParents: '" + currentState.brideParents.replace(/'/g, "\\'") + "',",
+        "  groomParents: '" + currentState.groomParents.replace(/'/g, "\\'") + "',",
+        "  date: '2027-02-20',",
+        "  displayDate: '" + currentState.displayDate.replace(/'/g, "\\'") + "',",
+        "  auspiciousTime: '" + currentState.auspiciousTime.replace(/'/g, "\\'") + "',",
+        "  venue: '" + currentState.venue.replace(/'/g, "\\'") + "',",
+        "  city: 'Kandy',",
+        "  mapUrl: 'https://maps.google.com/?q=Cinnamon+Citadel+Kandy',",
+        "  dressCode: 'Osariya / Mul Anduma or Lounge Suit',",
+        "  quote: 'Two hearts rooted in sacred Kandyan heritage, stepping onto the Poruwa surrounded by love.',",
+        "  flatlayImg: '/images/kandyan-vintage-car-sunset.jpg',",
+        "  heroImg: '/images/kandyan-poruwa-couple.jpg',",
+        "  events: [",
+        "    { time: '08:45 AM', title: 'Registration & Pahana Lighting', venue: 'Cinnamon Citadel Terrace, Kandy', desc: 'Lighting of traditional oil lamp & registration' },",
+        "    { time: '09:38 AM', title: 'Sacred Poruwa Ceremony', venue: 'Kandyan Heritage Hall', desc: 'Magul Bera, Ashtaka & Jayamangala Gatha' },",
+        "    { time: '12:30 PM', title: 'Festive Wedding Luncheon', venue: 'The Grand Ballroom', desc: 'Royal Kandyan & international buffet spread' },",
+        "    { time: '03:52 PM', title: 'Auspicious Going Away', venue: 'Main Porte-Cochere', desc: 'Vintage classic convertible departure' }",
+        "  ]",
+        "}"
+      ].join('\n');
+
+      const componentTsxCode = [
+        "'use client';",
+        "import React, { useEffect, useRef, useState } from 'react';",
+        "import { Heart, Calendar, MapPin, Mail, Home, Volume2, VolumeX, ChevronDown } from 'lucide-react';",
+        "import { WeddingTemplate } from '@/data/templates';",
+        "",
+        "export default function KandyanVintageRideCard({ template }: { template: WeddingTemplate }) {",
+        "  const canvasRef = useRef<HTMLCanvasElement | null>(null);",
+        "  const [muted, setMuted] = useState(true);",
+        "",
+        "  useEffect(() => {",
+        "    const canvas = canvasRef.current;",
+        "    if (!canvas) return;",
+        "    const ctx = canvas.getContext('2d');",
+        "    if (!ctx) return;",
+        "    let animId: number;",
+        "    const img = new Image();",
+        "    img.src = template.flatlayImg;",
+        "    const petals = Array.from({ length: 40 }, () => ({",
+        "      x: Math.random() * canvas.width,",
+        "      y: Math.random() * canvas.height,",
+        "      size: 5 + Math.random() * 6,",
+        "      speedY: 0.7 + Math.random() * 1.1,",
+        "      speedX: -0.4 + Math.random() * 0.8,",
+        "      angle: Math.random() * Math.PI * 2",
+        "    }));",
+        "    let tick = 0;",
+        "    const render = () => {",
+        "      tick++;",
+        "      ctx.clearRect(0, 0, canvas.width, canvas.height);",
+        "      if (img.complete) {",
+        "        const scale = 1.03 + Math.sin(tick * 0.015) * 0.015;",
+        "        ctx.save();",
+        "        ctx.translate(canvas.width / 2, canvas.height / 2);",
+        "        ctx.scale(scale, scale);",
+        "        ctx.drawImage(img, -canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);",
+        "        ctx.restore();",
+        "      }",
+        "      petals.forEach((p) => {",
+        "        p.y = p.y > canvas.height ? -10 : p.y + p.speedY;",
+        "        p.x += p.speedX + Math.sin(tick * 0.02) * 0.5;",
+        "        ctx.fillStyle = '#FB7185';",
+        "        ctx.beginPath();",
+        "        ctx.arc(p.x, p.y, p.size * 0.6, 0, Math.PI * 2);",
+        "        ctx.fill();",
+        "      });",
+        "      animId = requestAnimationFrame(render);",
+        "    };",
+        "    render();",
+        "    return () => cancelAnimationFrame(animId);",
+        "  }, [template.flatlayImg]);",
+        "",
+        "  return (",
+        "    <div className=\"relative max-w-[420px] mx-auto rounded-[36px] overflow-hidden bg-[#FFFDF7] text-[#7A0C1E] border border-[#D4AF37]\">",
+        "      <canvas ref={canvasRef} width={420} height={330} className=\"w-full h-[330px] object-cover\" />",
+        "      <div className=\"p-6 text-center\">",
+        "        <h1 className=\"text-sm tracking-[0.2em] font-bold uppercase\">{template.blessing}</h1>",
+        "        <h2 className=\"font-serif text-4xl my-2\">{template.couple}</h2>",
+        "        <p className=\"text-xs\">{template.displayDate} • {template.auspiciousTime}</p>",
+        "        <p className=\"text-xs font-semibold mt-1\">{template.venue}</p>",
+        "      </div>",
+        "    </div>",
+        "  );",
+        "}"
+      ].join('\n');
+
+      document.getElementById('codeBlockTemplatesTs').textContent = templateTsCode;
+      document.getElementById('codeBlockComponentTsx').textContent = componentTsxCode;
+    }
+
+    function copyCodeBlock(elementId, btnId) {
+      const text = document.getElementById(elementId).textContent;
+      const btn = document.getElementById(btnId);
+      const orig = btn.textContent;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          btn.textContent = '✓ Copied!';
+          setTimeout(() => { btn.textContent = orig; }, 2000);
+        }).catch(() => {
+          fallbackCopy(text, btn, orig);
+        });
+      } else {
+        fallbackCopy(text, btn, orig);
+      }
+    }
+
+    function fallbackCopy(text, btn, orig) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => { btn.textContent = orig; }, 2000);
+      } catch (e) {
+        showToast('Select the code block to copy.');
+      }
+      document.body.removeChild(ta);
+    }
+
+    // Initialize everything on load
+    window.onload = function() {
+      if (heroImg && heroImg.src) {
+        document.getElementById("catalogCardThumb").src = heroImg.src;
+        document.getElementById("galleryThumb0").src = heroImg.src;
+        document.getElementById("lightboxImg").src = heroImg.src;
+      }
+      initPetals(targetPetalCount);
+      renderHeroAnimationFrame();
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+      renderVeloraExportCode();
+    };
+  </script><script>
+function calendarStamp(offset){return new Date(new Date(currentState.date+'T'+(currentState.time||'09:38')+':00+05:30').getTime()+offset).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');}
+function calendarEscape(value){return String(value).replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');}
+const invitationViewport=document.getElementById('invitationViewport');
+document.getElementById('uploadedFamilyBlock').hidden=true;
+let veloraRecording = null, veloraSong = "", veloraSilent = false;
+const uploadedOriginalAudio = toggleWeddingAudio;
+toggleWeddingAudio = function(){
+ if(veloraSilent)return;
+ if(!veloraSong){uploadedOriginalAudio();return;}
+ if(veloraRecording && !veloraRecording.paused){veloraRecording.pause();document.getElementById('floatingMusicIcon').textContent='🔇';return;}
+ if(!veloraRecording){veloraRecording=new Audio(veloraSong);veloraRecording.loop=true;veloraRecording.volume=.3;}
+ veloraRecording.play().then(()=>document.getElementById('floatingMusicIcon').textContent='🎵').catch(()=>showToast('This recording could not be played. Check your song URL.'));
+};
+function applyVeloraDetails(d,startOpen){
+ veloraSilent=d.soundtrack==='silent';
+ const safeSong=d.musicUrl && (/^https:\/\//.test(d.musicUrl)||/^\/audio\/[a-zA-Z0-9_./-]+$/.test(d.musicUrl)||/^data:audio\/(mpeg|mp3|wav|x-wav|ogg);base64,/.test(d.musicUrl));
+ const nextSong=safeSong ? d.musicUrl : ['poruwa','romance','reception'].includes(d.soundtrack) ? '/audio/'+d.soundtrack+'.wav' : '';
+ if(nextSong!==veloraSong || veloraSilent){if(veloraRecording)veloraRecording.pause();veloraRecording=null;if(musicPlaying)uploadedOriginalAudio();veloraSong=nextSong;document.getElementById('floatingMusicIcon').textContent='🔇';}
+
+ currentState.date=d.date;currentState.time=d.time;
+ const set=(id,value)=>{document.getElementById(id).value=value;};
+ set('inputCouple',d.bride+' & '+d.groom);
+ set('inputDisplayDate',new Intl.DateTimeFormat(d.language==='si'?'si-LK':d.language==='ta'?'ta-LK':'en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Colombo'}).format(new Date(d.date+'T12:00:00+05:30')));
+ set('inputAuspiciousTime',d.time+' · Poruwa ceremony');set('inputVenue',d.venue);syncCustomDetails();
+ document.getElementById('veloraMessage').textContent='Dear '+d.guest+', '+d.message;
+ if(d.photo && /^data:image\/(jpeg|png|webp);base64,/.test(d.photo)){document.querySelectorAll('#secVenue img')[1].src=d.photo;}
+ document.getElementById('veloraStory').textContent=d.story;
+ document.getElementById('mapDirectionLink').href='https://maps.google.com/?q='+encodeURIComponent(d.venue);
+ document.documentElement.lang=d.language;updateCountdown();
+ if(startOpen){document.getElementById('curtainOverlay').classList.add('hidden');}
+}
+window.addEventListener('message',event=>{if(event.source!==parent||event.origin!==location.origin||event.data?.type!=='velora-details')return;applyVeloraDetails(event.data.details,event.data.startOpen);});
+window.addEventListener('keydown',event=>{if(event.key==='Escape'){closeGalleryLightbox();parent.postMessage({type:'velora-escape'},location.origin);}});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){petalsEnabled=false;carMotionEnabled=false;document.getElementById('peraheraTrack').style.animationPlayState='paused';}
+</script></body>
+</html>
